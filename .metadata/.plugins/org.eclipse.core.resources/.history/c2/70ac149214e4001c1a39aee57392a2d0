@@ -1,0 +1,47 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+SHELL = cmd.exe
+
+# Add inputs and outputs from these tool invocations to the build variables 
+EXE_SRCS += \
+../makefsfile.exe 
+
+CMD_SRCS += \
+../tm4c129encpdt.cmd 
+
+C_SRCS += \
+../fs.c \
+../tm4c129encpdt_startup_ccs.c \
+../webserver_1.c 
+
+C_DEPS += \
+./fs.d \
+./tm4c129encpdt_startup_ccs.d \
+./webserver_1.d 
+
+OBJS += \
+./fs.obj \
+./tm4c129encpdt_startup_ccs.obj \
+./webserver_1.obj 
+
+OBJS__QUOTED += \
+"fs.obj" \
+"tm4c129encpdt_startup_ccs.obj" \
+"webserver_1.obj" 
+
+C_DEPS__QUOTED += \
+"fs.d" \
+"tm4c129encpdt_startup_ccs.d" \
+"webserver_1.d" 
+
+C_SRCS__QUOTED += \
+"../fs.c" \
+"../tm4c129encpdt_startup_ccs.c" \
+"../webserver_1.c" 
+
+EXE_SRCS__QUOTED += \
+"../makefsfile.exe" 
+
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;webserver_1_FreeRTOS&apos; to &apos;VS_Gr06_LabProject_CoAP_Client&apos;" description="Rename resource &apos;webserver_1_FreeRTOS&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/webserver_1_FreeRTOS" name="VS_Gr06_LabProject_CoAP_Client" stamp="1654352680722" updateReferences="true"/>
+</session>
