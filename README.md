@@ -15,6 +15,6 @@
  - B = blau    < 26000
  - G = grün    < 19500
  - Y = gelb    < 13000
- - B = schwarz < 6500
+ - S = schwarz < 6500
  
  
