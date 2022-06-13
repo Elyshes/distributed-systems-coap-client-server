@@ -10,10 +10,11 @@
 
 ## Definitionen
 übertragen werden Großbuchstaben 
- R = rot
- B = blau
- G = grün
- V = violett
- W = weiß
+ R = rot     > 32501
+ V = violett < 32500
+ B = blau    < 26000
+ G = grün    < 19500
+ W = gelb    < 13000
+ S = schwarz < 6500
  
  
