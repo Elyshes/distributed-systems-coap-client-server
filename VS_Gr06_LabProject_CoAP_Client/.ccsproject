@@ -14,5 +14,5 @@
 	<templateProperties value="id=com.ti.common.project.core.emptyProjectWithMainTemplate"/>
 	<filesToOpen value="main.c"/>
 	<isTargetManual value="false"/>
-	<origin value="C:/ccs-vs-repo/workspace_ccs_vs/webserver_1_FreeRTOS"/>
+	<origin value="C:/Data/Workspaces/2020_WS2021/workspace_ccsv10_ws2021_vs/webserver_1"/>
 </projectOptions>

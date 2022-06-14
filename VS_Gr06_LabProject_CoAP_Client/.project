@@ -101,4 +101,10 @@
 			<locationURI>SW_ROOT/third_party/lwip-1.4.1/apps/httpserver_raw/httpd.c</locationURI>
 		</link>
 	</linkedResources>
+	<variableList>
+		<variable>
+			<name>SW_ROOT</name>
+			<value>$%7BCOM_TI_TIVAWARE_INSTALL_DIR%7D</value>
+		</variable>
+	</variableList>
 </projectDescription>

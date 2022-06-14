@@ -46,6 +46,7 @@ extern void xPortPendSVHandler(void);   // performs the context switching
 extern void vPortSVCHandler(void);      // starts the scheduler
 extern void xPortSysTickHandler(void);
 
+
 //*****************************************************************************
 //
 // Linker variable that marks the top of the stack.
@@ -111,7 +112,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // ADC Sequence 2
     IntDefaultHandler,                      // ADC Sequence 3
     IntDefaultHandler,                      // Watchdog timer
-    IntDefaultHandler,                      // Timer 0 subtimer A   <======
+    IntDefaultHandler,                      // Timer 0 subtimer A
     IntDefaultHandler,                      // Timer 0 subtimer B
     IntDefaultHandler,                      // Timer 1 subtimer A
     IntDefaultHandler,                      // Timer 1 subtimer B
@@ -132,7 +133,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // I2C1 Master and Slave
     IntDefaultHandler,                      // CAN0
     IntDefaultHandler,                      // CAN1
-    lwIPEthernetIntHandler,                 // Ethernet             <=== lwIP
+    lwIPEthernetIntHandler,                 // Ethernet             <=====
     IntDefaultHandler,                      // Hibernate
     IntDefaultHandler,                      // USB0
     IntDefaultHandler,                      // PWM Generator 3

@@ -46,7 +46,7 @@
 //#define HTTPD_DEBUG                     LWIP_DBG_ON
 #if !defined(EMAC_PHY_IS_EXT_MII) && !defined(EMAC_PHY_IS_EXT_RMII)
 #define EMAC_PHY_CONFIG (EMAC_PHY_TYPE_INTERNAL | EMAC_PHY_INT_MDIX_EN |      \
-                         EMAC_PHY_AN_100B_T_FULL_DUPLEX)
+		EMAC_PHY_AN_100B_T_FULL_DUPLEX)
 #define PHY_PHYS_ADDR      0
 #endif
 #if defined(EMAC_PHY_IS_EXT_MII)
@@ -94,21 +94,21 @@
 // ---------- Internal Memory Pool Sizes ----------
 //
 //*****************************************************************************
-#define MEMP_NUM_PBUF                     48    // Default 16
+#define MEMP_NUM_PBUF                     64//48    // Default 16
 //#define MEMP_NUM_RAW_PCB                4
 //#define MEMP_NUM_UDP_PCB                4
-#define MEMP_NUM_TCP_PCB                  16    // Default 5
+#define MEMP_NUM_TCP_PCB                  40//16    // Default 5
 //#define MEMP_NUM_TCP_PCB_LISTEN         8
-#define MEMP_NUM_TCP_SEG                  32  // Default 16
+#define MEMP_NUM_TCP_SEG                  48//32  // Default 16
 //#define MEMP_NUM_REASSDATA              5
 //#define MEMP_NUM_ARP_QUEUE              30
 //#define MEMP_NUM_IGMP_GROUP             8
-#define MEMP_NUM_SYS_TIMEOUT              8
+#define MEMP_NUM_SYS_TIMEOUT              10//8
 //#define MEMP_NUM_NETBUF                 2
 //#define MEMP_NUM_NETCONN                4
 //#define MEMP_NUM_TCPIP_MSG_API          8
 //#define MEMP_NUM_TCPIP_MSG_INPKT        8
-#define PBUF_POOL_SIZE                    48    // Default 16
+#define PBUF_POOL_SIZE                    64//48    // Default 16
 
 //*****************************************************************************
 //
@@ -127,8 +127,8 @@
 //*****************************************************************************
 //#define IP_FORWARD                      0
 //#define IP_OPTIONS_ALLOWED              1
-#define IP_REASSEMBLY                   0           // default is 1
-#define IP_FRAG                         0           // default is 1
+#define IP_REASSEMBLY                   1//0           // default is 1
+#define IP_FRAG                         1//0           // default is 1
 //#define IP_REASS_MAXAGE                 3
 //#define IP_REASS_MAX_PBUFS              10
 //#define IP_FRAG_USES_STATIC_BUF         1
@@ -180,7 +180,7 @@
 //*****************************************************************************
 #define LWIP_AUTOIP                     1           // default is 0
 #define LWIP_DHCP_AUTOIP_COOP           ((LWIP_DHCP) && (LWIP_AUTOIP))
-                                                    // default is 0
+// default is 0
 #define LWIP_DHCP_AUTOIP_COOP_TRIES     5           // default is 9
 
 //*****************************************************************************
@@ -237,8 +237,8 @@
 #define TCP_MSS                        1500        // default is 128
 //#define TCP_CALCULATE_EFF_SEND_MSS      1
 #define TCP_SND_BUF                     (6 * TCP_MSS)
-                                                    // default is 256
-//#define TCP_SND_QUEUELEN                (4 * (TCP_SND_BUF/TCP_MSS))
+// default is 256
+#define TCP_SND_QUEUELEN               (MEMP_NUM_TCP_SEG)// bboeck (4 * (TCP_SND_BUF/TCP_MSS))
 //#define TCP_SNDLOWAT                    (TCP_SND_BUF/2)
 //#define TCP_LISTEN_BACKLOG              0
 //#define TCP_DEFAULT_LISTEN_BACKLOG      0xff
@@ -258,7 +258,7 @@
 //*****************************************************************************
 #define PBUF_LINK_HLEN                  16          // default is 14
 #define PBUF_POOL_BUFSIZE               512
-                   // default is LWIP_MEM_ALIGN_SIZE(TCP_MSS+40+PBUF_LINK_HLEN)
+// default is LWIP_MEM_ALIGN_SIZE(TCP_MSS+40+PBUF_LINK_HLEN)
 #define ETH_PAD_SIZE                    0           // default is 0
 
 //*****************************************************************************
@@ -286,17 +286,17 @@
 //
 //*****************************************************************************
 //#define TCPIP_THREAD_NAME              "tcpip_thread"
-#define TCPIP_THREAD_STACKSIZE          512                     // BBOECK
+#define TCPIP_THREAD_STACKSIZE          5000//512                     // BBOECK
 #define TCPIP_THREAD_PRIO               2                       // BBOECK
 #define TCPIP_MBOX_SIZE                 32                      // default is 0 ?? BBOECK
 //#define SLIPIF_THREAD_NAME             "slipif_loop"
-#define SLIPIF_THREAD_STACKSIZE         512                     // BBOECK
+#define SLIPIF_THREAD_STACKSIZE         5000//512                    // BBOECK
 #define SLIPIF_THREAD_PRIO              2                       // BBOECK
 //#define PPP_THREAD_NAME                "pppMain"
 //#define PPP_THREAD_STACKSIZE            0
 //#define PPP_THREAD_PRIO                 1
 //#define DEFAULT_THREAD_NAME            "lwIP"
-#define DEFAULT_THREAD_STACKSIZE        512                     // BBOECK
+#define DEFAULT_THREAD_STACKSIZE        5000//512                     // BBOECK
 #define DEFAULT_THREAD_PRIO             4                       // BBOECK
 #define DEFAULT_RAW_RECVMBOX_SIZE       32                      // default is 0 ?? BBOECK
 #define DEFAULT_UDP_RECVMBOX_SIZE       32                      // default is 0 ?? BBOECK
@@ -319,7 +319,7 @@
 #define LWIP_SOCKET                     0           // default is 1
 //#define LWIP_COMPAT_SOCKETS             1
 //#define LWIP_POSIX_SOCKETS_IO_NAMES     1
-//#define LWIP_TCP_KEEPALIVE              0
+#define LWIP_TCP_KEEPALIVE              1// bboeck 0
 //#define LWIP_SO_RCVTIMEO                0
 //#define LWIP_SO_RCVBUF                  0
 //#define SO_REUSE                        0
@@ -416,7 +416,7 @@ extern void UARTprintf(const char *pcString, ...);
 
 //#define LWIP_DBG_TYPES_ON               LWIP_DBG_ON
 #define LWIP_DBG_TYPES_ON               (LWIP_DBG_ON|LWIP_DBG_TRACE|          \
-                                         LWIP_DBG_STATE|LWIP_DBG_FRESH)
+		LWIP_DBG_STATE|LWIP_DBG_FRESH)
 
 //#define ETHARP_DEBUG                    LWIP_DBG_ON     // default is OFF
 //#define NETIF_DEBUG                     LWIP_DBG_ON     // default is OFF
