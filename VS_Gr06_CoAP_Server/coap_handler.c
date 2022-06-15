@@ -3,7 +3,7 @@
 // Global Variables
 struct mg_coap_message coap_message;
 uint16_t localMessageID = 0;
-uint16_t color = 0;
+char color = '0';
 char *ctOpt = "";
 
 // Event Handler
@@ -106,47 +106,12 @@ void coap_handler(struct mg_connection *nc, int ev, void *p) {
                 UARTprintf("Client: PUT->");
 
                 if(mg_vcmp(&cm -> options -> value, "color") == 0) {
-                    char colorBuffer[1];
+                    UARTprintf("Color\n");
+                    char colorBuffer[1] = "0";
                     strncpy(&colorBuffer[0], cm -> payload.p, cm -> payload.len);
 
-                    if (strcmp(colorBuffer, "B") == 0) {
-                        color = CFAF128128B0145T_color_black;
-                    }
-                    else if (strcmp(colorBuffer, "W") == 0) {
-                        color = CFAF128128B0145T_color_white;
-                    }
-                    else if (strcmp(colorBuffer, "R") == 0) {
-                        color = CFAF128128B0145T_color_red;
-                    }
-                    else if (strcmp(colorBuffer, "G") == 0) {
-                        color = CFAF128128B0145T_color_green;
-                    }
-                    else if (strcmp(colorBuffer, "B") == 0) {
-                        color = CFAF128128B0145T_color_blue;
-                    }
-                    else if (strcmp(colorBuffer, "Y") == 0) {
-                        color = CFAF128128B0145T_color_yellow;
-                    }
-                    else if (strcmp(colorBuffer, "C") == 0) {
-                        color = CFAF128128B0145T_color_cyan;
-                    }
-                    else if (strcmp(colorBuffer, "O") == 0) {
-                        color = CFAF128128B0145T_color_orange;
-                    }
-                    else if (strcmp(colorBuffer, "M") == 0) {
-                        color = CFAF128128B0145T_color_magenta;
-                    }
-                    else if (strcmp(colorBuffer, "V") == 0) {
-                        color = CFAF128128B0145T_color_violet;
-                    }
-                    else if (strcmp(colorBuffer, "G") == 0) {
-                        color = CFAF128128B0145T_color_gray;
-                    }
-                    else if (strcmp(colorBuffer, "D") == 0) {
-                        color = CFAF128128B0145T_color_darkGray;
-                    }
-
-                    if (color != NULL) {
+                    if (colorBuffer != "0") {
+                        color = colorBuffer[0];
                         // 2.01 CREATED
                         coap_message.code_class = 2;
                         coap_message.code_detail = 1;

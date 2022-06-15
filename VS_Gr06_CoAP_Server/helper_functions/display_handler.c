@@ -28,7 +28,7 @@
 
 // The system clock speed.
 extern uint32_t g_ui32SysClock;
-extern uint16_t color;
+extern char color;
 extern float LuxSensorValue;
 extern float dietemp;
 
@@ -65,12 +65,10 @@ void ioDisplayUpdate(uint32_t localIP)
 
     // Light-Sensor
     sensorOpt3001Read();
-    sprintf(luxBuffer, " %5.2f Lux\0", LuxSensorValue); // auto-scale-max: 10^4
+    sprintf(luxBuffer, " %6.2f Lux", LuxSensorValue); // auto-scale-max: 10^4
     // Temp-Sensor
     tmp006Update();
-    sprintf(tempBuffer," %.2f %cC\0", dietemp, 176);
-    CFAF128128B0145T_circle(100, 80, 10, color);
-    CFAF128128B0145T_point(100, 80, color);
+    sprintf(tempBuffer," %6.2f %cC", dietemp, 176);
 
 	// TODO: offline?
     switch(localIP){
@@ -84,12 +82,75 @@ void ioDisplayUpdate(uint32_t localIP)
 
         default:
         	// Note print same or more chracters for IP, otherwise not overwrite!
-            CFAF128128B0145T_text(10, 50, ipBuffer, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);		// IP
-            CFAF128128B0145T_text(10, 80, luxBuffer, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);     // Brightness
-            CFAF128128B0145T_text(10, 110, tempBuffer, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);	// Temperature (internal)
+            CFAF128128B0145T_text(0, 50, ipBuffer, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);		// IP
+            CFAF128128B0145T_text(0, 80, "-------------------------------------", CFAF128128B0145T_color_black, CFAF128128B0145T_color_black, 1, 1);
+            CFAF128128B0145T_text(0, 80, luxBuffer, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);     // Brightness
+            CFAF128128B0145T_text(0, 110, "-------------------------------------", CFAF128128B0145T_color_black, CFAF128128B0145T_color_black, 1, 1);
+            CFAF128128B0145T_text(0, 110, tempBuffer, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);	// Temperature (internal)
+            // Actuator: Change Color
+            colorUpdate();
             break;
     }
 
 
     return;
+}
+
+void colorUpdate(void) {
+
+    uint16_t printColor = CFAF128128B0145T_color_black;
+    int brightness = 0;
+    int i;
+
+    switch(color) {
+        case 'R':
+                    printColor = CFAF128128B0145T_color_red;
+                    brightness = 5;
+                    break;
+        case 'V':
+                    printColor = CFAF128128B0145T_color_violet;
+                    brightness = 4;
+                    break;
+        case 'B':
+                    printColor = CFAF128128B0145T_color_blue;
+                    brightness = 3;
+                    break;
+        case 'G':
+                    printColor = CFAF128128B0145T_color_green;
+                    brightness = 2;
+                    break;
+        case 'Y':
+                    printColor = CFAF128128B0145T_color_yellow;
+                    brightness = 1;
+                    break;
+        case 'S':
+                    printColor = CFAF128128B0145T_color_black;
+                    brightness = 0;
+                    break;
+
+// Not used yet
+//        case 'W':
+//                    printColor = CFAF128128B0145T_color_white;
+//                    break;
+//        case 'C':
+//                    printColor = CFAF128128B0145T_color_cyan;
+//                    break;
+//        case 'O':
+//                    printColor = CFAF128128B0145T_color_orange;
+//                    break;
+//        case 'M':
+//                    printColor = CFAF128128B0145T_color_magenta;
+//                    break;
+//        case 'D':
+//                    printColor = CFAF128128B0145T_color_darkgrey;
+//                    break;
+        default:
+                    break;
+    }
+    for(i = 0; i < 12; i++) {
+        CFAF128128B0145T_circle(100, 80, i, CFAF128128B0145T_color_black);
+    }
+    for(i = 0; i < 2 * brightness + 2; i++) {
+        CFAF128128B0145T_circle(100, 80, i, printColor);
+    }
 }

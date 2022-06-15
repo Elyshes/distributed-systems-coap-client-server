@@ -11,5 +11,6 @@
 
 void ioDisplaySetup(void);
 void ioDisplayUpdate(uint32_t localIP);
+void colorUpdate(void);
 
 #endif /* HELPER_FUNCTIONS_DISPLAY_HANDLER_H_ */
