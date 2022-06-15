@@ -3,14 +3,16 @@
 
 
 ## Ablauf
-- Cient holt sich über GET-Request informationen über licht sicht sensor von Server.
-- Client ändert seine Displayfarbe in Abhängikeit des wertes
-- Client sendet mit PUT aktuelle displayfarbe an server
-- Server ändert seine Farbe dementsprechend
+Modell besteht aus zwei Mikrocontrollern, auf denen ein Server und ein Client laufen.
+
+- Cient holt sich über GET-Request aktuelle Informationen über den Licht-Sensor des Servers.
+- Client ändert seine Displayfarbe in Abhängikeit der Helligkeit welche durch den Licht-Sensor gemessen wird.
+- Client sendet mit PUT seine aktuelle Displayfarbe an den Server.
+- Server passt die Farbe seines Displays dementsprechend an.
 
 ## Definitionen
-übertragen werden Großbuchstaben 
- - R = rot     > 32501
+Übertragen werden Großbuchstaben: 
+ - R = rot     > 32499
  - V = violett < 32500
  - B = blau    < 26000
  - G = grün    < 19500
