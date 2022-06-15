@@ -20,7 +20,7 @@ uint16_t ReadI2CRegisterTemp(uint8_t i2cAdress, uint8_t registerName)
     SysCtlDelay(500);
     while(I2CMasterBusy(I2C_DEVICE));
 
-    SysCtlDelay(50000);
+    SysCtlDelay(1000);
     I2CMasterSlaveAddrSet(I2C_DEVICE, i2cAdress, true);
     I2CMasterControl(I2C_DEVICE, I2C_MASTER_CMD_BURST_RECEIVE_START);
     SysCtlDelay(500);

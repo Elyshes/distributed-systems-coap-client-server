@@ -12,6 +12,7 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "mongoose/mongoose.h"
 #include "mbedtls/debug.h"
@@ -209,8 +210,6 @@ void vTaskDisplay(void *pvParameters) {
     sensorOpt3001Setup();
     ioDisplaySetup();
     while(1) {
-        // MAP_GPIOPinWrite(LED1_PORT_BASE, LED1_PIN, (MAP_GPIOPinRead(LED1_PORT_BASE, LED1_PIN) ^ LED1_PIN));
-        // ToDo: Write to Display
         ioDisplayUpdate(g_ui32IPAddress);
         vTaskDelay(pdMS_TO_TICKS(500));
     }

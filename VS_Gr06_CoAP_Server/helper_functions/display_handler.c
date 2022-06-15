@@ -28,6 +28,7 @@
 
 // The system clock speed.
 extern uint32_t g_ui32SysClock;
+extern uint16_t color;
 extern float LuxSensorValue;
 extern float dietemp;
 
@@ -62,10 +63,14 @@ void ioDisplayUpdate(uint32_t localIP)
     memset(&ipBuffer[len], ' ', 20-len);
     ipBuffer[21] = '\0'; // Null-Terminate
 
+    // Light-Sensor
     sensorOpt3001Read();
     sprintf(luxBuffer, " %5.2f Lux\0", LuxSensorValue); // auto-scale-max: 10^4
+    // Temp-Sensor
     tmp006Update();
     sprintf(tempBuffer," %.2f %cC\0", dietemp, 176);
+    CFAF128128B0145T_circle(100, 80, 10, color);
+    CFAF128128B0145T_point(100, 80, color);
 
 	// TODO: offline?
     switch(localIP){
