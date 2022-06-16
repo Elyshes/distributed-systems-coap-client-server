@@ -17,7 +17,7 @@ Bei der Übertragung in Schritt 3 werden Großbuchstaben als Daten verwendet:
  - B = blue      < 26000
  - G = green     < 19500
  - Y = yellow    < 13000
- - S = black   < 6500
+ - S = black     < 6500
  
  
 Mögliche weitere Farben sind
