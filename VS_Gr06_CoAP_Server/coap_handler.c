@@ -4,7 +4,6 @@
 struct mg_coap_message coap_message;
 uint16_t localMessageID = 0;
 char color = '0';
-char *ctOpt = "";
 
 // Event Handler
 void coap_handler(struct mg_connection *nc, int ev, void *p) {
@@ -14,6 +13,7 @@ void coap_handler(struct mg_connection *nc, int ev, void *p) {
 
             uint32_t res;
             struct mg_coap_message *cm = (struct mg_coap_message *) p;
+            struct mg_coap_message coap_message;
             memset(&coap_message, 0, sizeof(coap_message));
 
             uartDisplay(cm);
@@ -31,8 +31,8 @@ void coap_handler(struct mg_connection *nc, int ev, void *p) {
             if(cm -> code_class == 0 && cm -> code_detail == 1) {
                 UARTprintf("Client: GET->");
 
-                // if discover == .well_known/core
-                if(mg_vcmp(&cm -> options -> value, ".well-known/core") == 0) {
+                // if discover == .well_known
+                if(mg_vcmp(&cm -> options -> value, ".well-known") == 0) {
                     UARTprintf("Discover\n");
                     mg_coap_send_by_discover(nc, cm -> msg_id, cm -> token);
                 }
@@ -40,11 +40,11 @@ void coap_handler(struct mg_connection *nc, int ev, void *p) {
 
                     UARTprintf("Light\n");
                     if(cm -> msg_type == 0) {
-                        coap_message.msg_type = MG_COAP_MSG_ACK;
+                        coap_message.msg_type = 2;
                         coap_message.msg_id = cm -> msg_id;
                     }
                     else {
-                        coap_message.msg_type = MG_COAP_MSG_NOC;
+                        coap_message.msg_type = 1;
                         coap_message.msg_id = localMessageID++;
                     }
                     coap_message.token = cm -> token;
@@ -56,46 +56,38 @@ void coap_handler(struct mg_connection *nc, int ev, void *p) {
                     mg_coap_add_option(&coap_message, 12, 0, 1);
 
                     char luxBuffer[200];
+                    sprintf(luxBuffer, "%5i", (int)LuxSensorValue);
+                    coap_message.payload.p = &luxBuffer[0];
+                    coap_message.payload.len = strlen(&luxBuffer[0]);
 
-                    // Plain Text
-                    if (ctOpt == 0) {
-                        sprintf(luxBuffer, "%5i", (int)LuxSensorValue);
-                        coap_message.payload.p = &luxBuffer[0];
-                        coap_message.payload.len = strlen(&luxBuffer[0]);
-                    }
                 }
                 else if(mg_vcmp(&cm -> options -> value, "temperature") == 0) {
 
                     UARTprintf("Temperature\n");
                     if(cm -> msg_type == 0) {
-                        coap_message.msg_type = MG_COAP_MSG_ACK;
+                        coap_message.msg_type = 2;
                         coap_message.msg_id = cm -> msg_id;
                     }
                     else {
-                        coap_message.msg_type = MG_COAP_MSG_NOC;
+                        coap_message.msg_type = 1;
                         coap_message.msg_id = localMessageID++;
                     }
                     coap_message.token = cm -> token;
 
                     // 2.05 CONTENT
-                    coap_message.code_class = MG_COAP_CODECLASS_RESP_OK;
+                    coap_message.code_class = 2;
                     coap_message.code_detail = 5;
 
                     mg_coap_add_option(&coap_message, 12, 0, 1);
 
-
                     char tempBuffer[200];
-
-                    // Plain Text
-                    if(ctOpt == 0) {
-                        sprintf(tempBuffer,"%5i", (int)dietemp, 176);
-                        coap_message.payload.p = &tempBuffer[0];
-                        coap_message.payload.len = strlen(&tempBuffer[0]);
-                    }
+                    sprintf(tempBuffer,"%5i", (int)dietemp, 176);
+                    coap_message.payload.p = &tempBuffer[0];
+                    coap_message.payload.len = strlen(&tempBuffer[0]);
                 }
                 else {
                     // 4.02 BAD OPTION
-                    coap_message.code_class = MG_COAP_CODECLASS_CLIENT_ERR;
+                    coap_message.code_class = 4;
                     coap_message.code_detail = 2;
                 }
 

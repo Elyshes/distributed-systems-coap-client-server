@@ -65,27 +65,25 @@ void ioDisplayUpdate(uint32_t localIP)
 
     // Light-Sensor
     sensorOpt3001Read();
-    sprintf(luxBuffer, " %6.2f Lux", LuxSensorValue); // auto-scale-max: 10^4
+    sprintf(luxBuffer, "%7.2f lx", LuxSensorValue); // auto-scale-max: 10^4
     // Temp-Sensor
     tmp006Update();
-    sprintf(tempBuffer," %6.2f %cC", dietemp, 176);
+    sprintf(tempBuffer,"%7.2f %cC", dietemp, 176);
 
 	// TODO: offline?
     switch(localIP){
         case 0xFFFFFFFF:
-            CFAF128128B0145T_text(10, 50, " Waiting for LINK", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
+            CFAF128128B0145T_text(0, 50, " Waiting for LINK", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
             break;
 
         case 0:
-            CFAF128128B0145T_text(10, 50, " Waiting for IP", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
+            CFAF128128B0145T_text(0, 50, " Waiting for IP", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
             break;
 
         default:
-        	// Note print same or more chracters for IP, otherwise not overwrite!
+        	// Note print same or more characters for IP, otherwise not overwrite!
             CFAF128128B0145T_text(0, 50, ipBuffer, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);		// IP
-            CFAF128128B0145T_text(0, 80, "-------------------------------------", CFAF128128B0145T_color_black, CFAF128128B0145T_color_black, 1, 1);
             CFAF128128B0145T_text(0, 80, luxBuffer, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);     // Brightness
-            CFAF128128B0145T_text(0, 110, "-------------------------------------", CFAF128128B0145T_color_black, CFAF128128B0145T_color_black, 1, 1);
             CFAF128128B0145T_text(0, 110, tempBuffer, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);	// Temperature (internal)
             // Actuator: Change Color
             colorUpdate();
