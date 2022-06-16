@@ -106,9 +106,9 @@ void coap_handler(struct mg_connection *nc, int ev, void *p) {
 
                     if (colorBuffer != "0") {
                         color = colorBuffer[0];
-                        // 2.01 CREATED
+                        // 2.04 CHANGE
                         coap_message.code_class = 2;
-                        coap_message.code_detail = 1;
+                        coap_message.code_detail = 4;
                     }
                     else {
                         // 4.02 BAD OPTION
@@ -208,14 +208,15 @@ static void mg_coap_send_by_discover(struct mg_connection *nc, uint16_t msg_id, 
      * - title  = title
      *=====================================================================*/
     char* cont_text =
-
-            "</light>;"
-                "title=\"Brightness\";"
-                "rt=\"light-lux\";"
-
-            "</color>;"
-                "title=\"Color\";"
-                "rt=\"color-char\"";
+                "</light>;"
+                    "title=\"Brightness\";"
+                    "rt=\"light-lux\";"
+                    "if=\"sensor\","
+                "</color>;"
+                    "title=\"Color\";"
+                    "rt=\"color-char\";"
+                    "if=\"actuator\""
+    ;
 
     coap_message.payload.p      = cont_text;
     coap_message.payload.len    = strlen(cont_text);
