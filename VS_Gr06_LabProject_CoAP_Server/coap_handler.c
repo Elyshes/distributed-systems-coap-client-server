@@ -2,8 +2,8 @@
 
 // Global Variables
 struct mg_coap_message coap_message;
-uint16_t localMessageID = 0;
 char color = '0';
+uint16_t localMessageID = 0;
 
 // Event Handler
 void coap_handler(struct mg_connection *nc, int ev, void *p) {
@@ -101,6 +101,8 @@ void coap_handler(struct mg_connection *nc, int ev, void *p) {
 
                 if(mg_vcmp(&cm -> options -> value, "color") == 0) {
                     UARTprintf("Color\n");
+                    coap_message.msg_id = cm -> msg_id;
+
                     char colorBuffer[1] = "0";
                     strncpy(&colorBuffer[0], cm -> payload.p, cm -> payload.len);
 
@@ -139,10 +141,6 @@ void coap_handler(struct mg_connection *nc, int ev, void *p) {
             break;
         }
     }
-}
-
-void coapMessage_handler(struct mg_connection *nc, struct mg_coap_message *cm) {
-
 }
 
 static void uartDisplay(struct mg_coap_message *cm)

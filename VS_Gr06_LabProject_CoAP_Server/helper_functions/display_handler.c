@@ -32,9 +32,11 @@ extern char color;
 extern float LuxSensorValue;
 extern float dietemp;
 
-char    luxBuffer[9];
-char	tempBuffer[9];
+char    luxBuffer[20];
+char	tempBuffer[20];
 float	tempValue;
+
+char old_color = '0';
 
 void ioDisplaySetup(void){
 
@@ -66,10 +68,10 @@ void ioDisplayUpdate(uint32_t localIP)
 
     // Light-Sensor
     sensorOpt3001Read();
-    sprintf(luxBuffer, "%5.2f lx \0", LuxSensorValue); // auto-scale-max: 10^4
+    sprintf(luxBuffer, "%5.2f lx   \0", LuxSensorValue); // auto-scale-max: 10^4
     // Temp-Sensor
     tmp006Update();
-    sprintf(tempBuffer,"%5.2f %cC \0", dietemp, 176);
+    sprintf(tempBuffer,"%5.2f %cC  \0", dietemp, 176);
 
 	// TODO: offline?
     switch(localIP){
@@ -98,58 +100,59 @@ void ioDisplayUpdate(uint32_t localIP)
 void colorUpdate(void) {
 
     uint16_t printColor = CFAF128128B0145T_color_black;
-    int brightness = 0;
+    int brightness;
     int i;
 
-    switch(color) {
-        case 'R':
-                    printColor = CFAF128128B0145T_color_red;
-                    brightness = 5;
-                    break;
-        case 'V':
-                    printColor = CFAF128128B0145T_color_violet;
-                    brightness = 4;
-                    break;
-        case 'B':
-                    printColor = CFAF128128B0145T_color_blue;
-                    brightness = 3;
-                    break;
-        case 'G':
-                    printColor = CFAF128128B0145T_color_green;
-                    brightness = 2;
-                    break;
-        case 'Y':
-                    printColor = CFAF128128B0145T_color_yellow;
-                    brightness = 1;
-                    break;
-        case 'S':
-                    printColor = CFAF128128B0145T_color_black;
-                    brightness = 0;
-                    break;
+    if(old_color != color) {
+        old_color = color;
+        switch(color) {
+            case 'R':   // Red
+                        printColor = CFAF128128B0145T_color_red;
+                        brightness = 10;
+                        break;
+            case 'V':   // Violet
+                        printColor = CFAF128128B0145T_color_violet;
+                        brightness = 8;
+                        break;
+            case 'B':   // Blue
+                        printColor = CFAF128128B0145T_color_blue;
+                        brightness = 6;
+                        break;
+            case 'G':   // Green
+                        printColor = CFAF128128B0145T_color_green;
+                        brightness = 4;
+                        break;
+            case 'Y':   // Yellow
+                        printColor = CFAF128128B0145T_color_yellow;
+                        brightness = 2;
+                        break;
+            case 'S':   // Black
+                        printColor = CFAF128128B0145T_color_black;
+                        brightness = 0;
+                        break;
+            default:
+                        printColor = CFAF128128B0145T_color_white;
+                        brightness = -5;
+                        break;
+        }
 
-// Not used yet
-//        case 'W':
-//                    printColor = CFAF128128B0145T_color_white;
-//                    break;
-//        case 'C':
-//                    printColor = CFAF128128B0145T_color_cyan;
-//                    break;
-//        case 'O':
-//                    printColor = CFAF128128B0145T_color_orange;
-//                    break;
-//        case 'M':
-//                    printColor = CFAF128128B0145T_color_magenta;
-//                    break;
-//        case 'D':
-//                    printColor = CFAF128128B0145T_color_darkgrey;
-//                    break;
-        default:
-                    break;
-    }
-    for(i = 0; i < 12; i++) {
-        CFAF128128B0145T_circle(100, 80, i, CFAF128128B0145T_color_black);
-    }
-    for(i = 0; i < 2 * brightness + 2; i++) {
-        CFAF128128B0145T_circle(100, 80, i, printColor);
+        // Reset
+        for(i = 0; i < 12; i++) {
+            CFAF128128B0145T_circle(100, 75, i, CFAF128128B0145T_color_black);
+        }
+        CFAF128128B0145T_line(90, 65, 110, 85, CFAF128128B0145T_color_black);
+        CFAF128128B0145T_line(90, 85, 110, 65, CFAF128128B0145T_color_black);
+
+        // Print
+        if (brightness > 0) {
+            for(i = 0; i < brightness + 4; i++) {
+                CFAF128128B0145T_circle(100, 75, i, printColor);
+            }
+        }
+        else {
+            CFAF128128B0145T_circle(100, 75, 10, printColor);
+            CFAF128128B0145T_line(95, 70, 105, 80, printColor);
+            CFAF128128B0145T_line(95, 80, 105, 70, printColor);
+        }
     }
 }
