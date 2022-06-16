@@ -12,11 +12,18 @@ Modell besteht aus zwei Mikrocontrollern, auf denen ein Server und ein Client be
 
 ## Definitionen
 Bei der Übertragung in Schritt 3 werden Großbuchstaben als Daten verwendet: 
- - R = rot     > 32499
- - V = violett < 32500
- - B = blau    < 26000
- - G = grün    < 19500
- - Y = gelb    < 13000
- - S = schwarz < 6500
+ - R = red       > 32499
+ - V = violett   < 32500
+ - B = blue      < 26000
+ - G = green     < 19500
+ - Y = yellow    < 13000
+ - S = black   < 6500
  
  
+Mögliche weitere Farben sind
+- anything = grey
+- D = darkgrey
+- O = orange
+- W = white
+- M = magenta
+- C = cyan 
