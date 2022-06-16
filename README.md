@@ -3,7 +3,7 @@
 
 
 ## Ablauf
-Modell besteht aus zwei Mikrocontrollern, auf denen ein Server und ein Client laufen.
+Modell besteht aus zwei Mikrocontrollern, auf denen ein Server und ein Client befinden.
 
 - Cient holt sich über GET-Request aktuelle Informationen über den Licht-Sensor des Servers.
 - Client ändert seine Displayfarbe in Abhängikeit der Helligkeit welche durch den Licht-Sensor gemessen wird.
@@ -11,7 +11,7 @@ Modell besteht aus zwei Mikrocontrollern, auf denen ein Server und ein Client la
 - Server passt die Farbe seines Displays dementsprechend an.
 
 ## Definitionen
-Übertragen werden Großbuchstaben: 
+Bei der Übertragung in Schritt 3 werden Großbuchstaben als Daten verwendet: 
  - R = rot     > 32499
  - V = violett < 32500
  - B = blau    < 26000
