@@ -20,7 +20,17 @@ void coap_handler(struct mg_connection *nc, int ev, void *ev_data)
 		case MG_EV_COAP_ACK:
 		{
 			UARTprintf("Server send ACK  with msg_id = %d\n",incoming->msg_id);
-			coap_parse_ack(incoming, nc);
+			switch(incoming->code_detail)
+			{
+			case RESPONSE_CODE_CHANGED:
+				UARTprintf("Value changed\n");
+				break;
+
+			case RESPONSE_CODE_CONTENT:
+				coap_parse_ack(incoming, nc);
+				break;
+			}
+
 			break;
 		}
 
@@ -140,32 +150,32 @@ void  coap_parse_ack(struct mg_coap_message *cm, struct mg_connection *nc)
 	if (brightness < 6500)
 	{
 		//send black
-		coap_send_put(nc, uri_path1, msg_id, COLOR_BLACK);
+		coap_send_put(nc, uri_path2, msg_id, COLOR_BLACK);
 	}
 	else if (brightness < 13000)
 	{
 		//send yellow
-		coap_send_put(nc, uri_path1, msg_id, COLOR_YELLOW);
+		coap_send_put(nc, uri_path2, msg_id, COLOR_YELLOW);
 	}
 	else if (brightness < 19500)
 	{
 		//send green
-		coap_send_put(nc, uri_path1, msg_id, COLOR_GREEN);
+		coap_send_put(nc, uri_path2, msg_id, COLOR_GREEN);
 	}
 	else if (brightness < 26000)
 	{
 		//send blue
-		coap_send_put(nc, uri_path1, msg_id, COLOR_BLUE);
+		coap_send_put(nc, uri_path2, msg_id, COLOR_BLUE);
 	}
 	else if (brightness < 32500)
 	{
 		//send violet
-		coap_send_put(nc, uri_path1, msg_id, COLOR_VIOLET);
+		coap_send_put(nc, uri_path2, msg_id, COLOR_VIOLET);
 	}
 	else
 	{
 		//send red
-		coap_send_put(nc, uri_path1, msg_id, COLOR_RED);
+		coap_send_put(nc, uri_path2, msg_id, COLOR_RED);
 	}
 }
 

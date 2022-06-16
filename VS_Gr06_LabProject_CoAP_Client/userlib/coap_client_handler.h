@@ -11,6 +11,7 @@
 #include "third_party/mongoose.h"
 
 #define uri_path1 "light"
+#define uri_path2 "color"
 
 #define COLOR_RED "R"
 #define COLOR_VIOLET "V"
