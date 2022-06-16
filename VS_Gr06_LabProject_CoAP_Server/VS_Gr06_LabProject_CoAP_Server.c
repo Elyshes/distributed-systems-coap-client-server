@@ -197,7 +197,9 @@ int main(void) {
     // Start RTOS Tasks
     vTaskStartScheduler();
 
-    // Program should never reach here
+    // Execution should never reach this point as the scheduler is running the tasks
+    // If execution reaches here, then there might be insufficient heap memory for creating the idle task
+
     while(1){
     };
 }
@@ -207,6 +209,7 @@ int main(void) {
 void vTaskDisplay(void *pvParameters) {
 
     // Initialize Sensor and Display
+    tmp006Init();
     sensorOpt3001Setup();
     ioDisplaySetup();
 

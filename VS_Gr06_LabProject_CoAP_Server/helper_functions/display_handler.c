@@ -62,6 +62,7 @@ void ioDisplayUpdate(uint32_t localIP)
     // Light-Sensor
     sensorOpt3001Read();
     sprintf(luxBuffer, "%5.2f lx   \0", LuxSensorValue); // auto-scale-max: 10^4
+    CFAF128128B0145T_text(15, 80, luxBuffer, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);     // Brightness
 
 	// TODO: offline?
     switch(localIP){
@@ -76,12 +77,10 @@ void ioDisplayUpdate(uint32_t localIP)
         default:
         	// Note print same or more characters for IP, otherwise not overwrite!
             CFAF128128B0145T_text(5, 50, ipBuffer, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);		// IP
-            CFAF128128B0145T_text(15, 80, luxBuffer, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);     // Brightness
             // Actuator: Change Color
             colorUpdate();
             break;
     }
-
 
     return;
 }
