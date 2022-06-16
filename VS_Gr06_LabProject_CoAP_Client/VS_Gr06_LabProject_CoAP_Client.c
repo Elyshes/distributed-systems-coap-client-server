@@ -34,6 +34,7 @@
 //*****************************************************************************
 uint32_t g_ui32IPAddress;       // The current IP address.
 uint32_t g_ui32SysClock;        // The system clock frequency.
+uint32_t coap_payload= 0;		// The coap payload to show in display
 
 // Mongoose Eventmanager and connetion struct
 struct mg_mgr mgr;
@@ -155,8 +156,7 @@ void lwIPHostTimerHandler(void)
 //
 //*****************************************************************************
 int main(void)
-{//  task
-	// *******
+{
     uint32_t ui32User0, ui32User1;
     uint8_t pui8MACArray[8];
 
@@ -269,21 +269,22 @@ void vTaskDisplay(void *pvParameters)
     while(1){
 
         // Toggle LED
-        MAP_GPIOPinWrite(LED1_PORT_BASE, LED1_PIN, (MAP_GPIOPinRead(LED1_PORT_BASE, LED1_PIN) ^ LED1_PIN));
+//        MAP_GPIOPinWrite(LED1_PORT_BASE, LED1_PIN, (MAP_GPIOPinRead(LED1_PORT_BASE, LED1_PIN) ^ LED1_PIN));
 
         io_display(g_ui32IPAddress);
 
         vTaskDelay( pdMS_TO_TICKS( 500 ) ); // delay 500 milliseconds
-                                            // the task is placed into the blocked state for 500 ms
     }
 }
 
 void mongooseClientTask(void *parameters)
 {
-	vTaskDelay(pdMS_TO_TICKS(5000));
-     // Mongoose Eventmanager and connetion struct
-//     struct mg_mgr mgr;
-//     struct mg_connection *nc;
+	//wait for IP address
+	while((g_ui32IPAddress == 0) | (g_ui32IPAddress == 0xFFFFFFFF) )
+	{
+		vTaskDelay(pdMS_TO_TICKS(500));
+	}
+	vTaskDelay(pdMS_TO_TICKS(1000));
 
      // Initialize Mongoose
      mg_mgr_init(&mgr, 0);
@@ -301,6 +302,7 @@ void mongooseClientTask(void *parameters)
      // set COAP Protocol
      mg_set_protocol_coap(nc);
 
+     // poll COAP handler
      while(1)
      {
          mg_mgr_poll(&mgr, 0);
@@ -310,13 +312,19 @@ void mongooseClientTask(void *parameters)
 
 void mongooseSendingTask(void *parameters)
 {
-	vTaskDelay(pdMS_TO_TICKS(7000));
+	//wait for IP address
+	while ((g_ui32IPAddress == 0) | (g_ui32IPAddress == 0xFFFFFFFF))
+	{
+		vTaskDelay(pdMS_TO_TICKS(500));
+	}
+	vTaskDelay(pdMS_TO_TICKS(2000)); //delay to start sending after COAP connection is established
+
 	uint16_t msg_id = 0;
 
 	while (1)
 	{
 		coap_send_get(nc, uri_path1, msg_id);
 		msg_id++;
-		vTaskDelay(pdMS_TO_TICKS(2000));
+		vTaskDelay(pdMS_TO_TICKS(2000)); //send every 2 seconds GET request and evaluate the lux value
 	}
 }
