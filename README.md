@@ -21,7 +21,6 @@ Bei der Übertragung in Schritt 3 werden Großbuchstaben als Daten verwendet:
  
  
 Mögliche weitere Farben sind
-- anything = grey
 - D = darkgrey
 - O = orange
 - W = white
