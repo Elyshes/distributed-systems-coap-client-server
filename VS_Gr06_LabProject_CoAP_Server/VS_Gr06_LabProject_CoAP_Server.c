@@ -19,7 +19,6 @@
 #include "drivers/pinout.h"
 #include "CFAF128128B0145T/CFAF128128B0145T.h"
 
-#include "helper_functions/temperature_handler.h"
 #include "helper_functions/lightsensor_handler.h"
 #include "helper_functions/display_handler.h"
 
@@ -204,7 +203,6 @@ int main(void) {
 }
 
 void vTaskDisplay(void *pvParameters) {
-    tmp006Init();
     sensorOpt3001Setup();
     ioDisplaySetup();
     while(1) {

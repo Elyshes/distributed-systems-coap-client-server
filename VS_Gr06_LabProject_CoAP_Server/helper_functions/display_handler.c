@@ -24,18 +24,13 @@
 
 #include "helper_functions/display_handler.h"
 #include "helper_functions/lightsensor_handler.h"
-#include "helper_functions/temperature_handler.h"
 
 // The system clock speed.
 extern uint32_t g_ui32SysClock;
 extern char color;
 extern float LuxSensorValue;
-extern float dietemp;
 
-char    luxBuffer[20];
-char	tempBuffer[20];
-float	tempValue;
-
+char luxBuffer[20];
 char old_color = '0';
 
 void ioDisplaySetup(void){
@@ -50,8 +45,6 @@ void ioDisplaySetup(void){
     CFAF128128B0145T_text(15, 50, " --- ", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
     CFAF128128B0145T_text(5, 70, "Brightness:", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
     CFAF128128B0145T_text(15, 80, " --- ", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
-    CFAF128128B0145T_text(5, 100, "Temperature: ", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
-    CFAF128128B0145T_text(15, 110, " --- ", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
 }
 
 
@@ -69,9 +62,6 @@ void ioDisplayUpdate(uint32_t localIP)
     // Light-Sensor
     sensorOpt3001Read();
     sprintf(luxBuffer, "%5.2f lx   \0", LuxSensorValue); // auto-scale-max: 10^4
-    // Temp-Sensor
-    tmp006Update();
-    sprintf(tempBuffer,"%5.2f %cC  \0", dietemp, 176);
 
 	// TODO: offline?
     switch(localIP){
@@ -87,7 +77,6 @@ void ioDisplayUpdate(uint32_t localIP)
         	// Note print same or more characters for IP, otherwise not overwrite!
             CFAF128128B0145T_text(5, 50, ipBuffer, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);		// IP
             CFAF128128B0145T_text(15, 80, luxBuffer, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);     // Brightness
-            CFAF128128B0145T_text(15, 110, tempBuffer, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);	// Temperature (internal)
             // Actuator: Change Color
             colorUpdate();
             break;
@@ -137,7 +126,7 @@ void colorUpdate(void) {
         }
 
         // Reset
-        for(i = 0; i < 12; i++) {
+        for(i = 0; i < 14; i++) {
             CFAF128128B0145T_circle(100, 75, i, CFAF128128B0145T_color_black);
         }
         CFAF128128B0145T_line(90, 65, 110, 85, CFAF128128B0145T_color_black);

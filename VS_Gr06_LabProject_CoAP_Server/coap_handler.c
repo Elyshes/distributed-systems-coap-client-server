@@ -63,30 +63,6 @@ void coap_handler(struct mg_connection *nc, int ev, void *p) {
                     coap_message.payload.len = strlen(&luxBuffer[0]);
 
                 }
-                else if(mg_vcmp(&cm -> options -> value, "temperature") == 0) {
-
-                    UARTprintf("Temperature\n");
-                    if(cm -> msg_type == 0) {
-                        coap_message.msg_type = 2;
-                        coap_message.msg_id = cm -> msg_id;
-                    }
-                    else {
-                        coap_message.msg_type = 1;
-                        coap_message.msg_id = localMessageID++;
-                    }
-                    coap_message.token = cm -> token;
-
-                    // 2.05 CONTENT
-                    coap_message.code_class = 2;
-                    coap_message.code_detail = 5;
-
-                    mg_coap_add_option(&coap_message, 12, &ctOpt, 1);
-
-                    char tempBuffer[200];
-                    sprintf(tempBuffer,"%5i", (int)dietemp, 176);
-                    coap_message.payload.p = &tempBuffer[0];
-                    coap_message.payload.len = strlen(&tempBuffer[0]);
-                }
                 else {
                     // 4.02 BAD OPTION
                     coap_message.code_class = 4;
