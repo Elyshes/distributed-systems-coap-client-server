@@ -16,6 +16,8 @@ void coap_handler(struct mg_connection *nc, int ev, void *p) {
             struct mg_coap_message coap_message;
             memset(&coap_message, 0, sizeof(coap_message));
 
+            char *ctOpt = FORMAT_PLAIN;
+
             uartDisplay(cm);
             UARTprintf("CON with msg_id = %d received\n", cm->msg_id);
 
@@ -53,7 +55,7 @@ void coap_handler(struct mg_connection *nc, int ev, void *p) {
                     coap_message.code_class = 2;
                     coap_message.code_detail = 5;
 
-                    mg_coap_add_option(&coap_message, 12, 0, 1);
+                    mg_coap_add_option(&coap_message, 12, &ctOpt, 1);
 
                     char luxBuffer[200];
                     sprintf(luxBuffer, "%5i", (int)LuxSensorValue);
@@ -78,7 +80,7 @@ void coap_handler(struct mg_connection *nc, int ev, void *p) {
                     coap_message.code_class = 2;
                     coap_message.code_detail = 5;
 
-                    mg_coap_add_option(&coap_message, 12, 0, 1);
+                    mg_coap_add_option(&coap_message, 12, &ctOpt, 1);
 
                     char tempBuffer[200];
                     sprintf(tempBuffer,"%5i", (int)dietemp, 176);
