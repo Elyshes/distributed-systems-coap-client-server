@@ -58,7 +58,7 @@ static const uint16_t CFAF128128B0145T_color_cyan = 0b0000011111111111;
 static const uint16_t CFAF128128B0145T_color_orange = 0b1111101111100000;
 static const uint16_t CFAF128128B0145T_color_magenta = 0b1111100000001111;
 static const uint16_t CFAF128128B0145T_color_violet = 0b1111100000011111;
-static const uint16_t CFAF128128B0145T_color_gray = 0b0111101111101111;
+//static const uint16_t CFAF128128B0145T_color_gray = 0b0111101111101111;
 static const uint16_t CFAF128128B0145T_color_darkGray = 0b0011100111100111;
 
 // Prototypes
