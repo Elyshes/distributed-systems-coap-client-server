@@ -40,8 +40,8 @@ uint32_t coap_payload= 0;		// The coap payload to show in display
 struct mg_mgr mgr;
 struct mg_connection *nc;
 
-static char *s_default_address = "udp://192.168.178.89:5683";
-//static char *s_default_address = "udp://141.37.157.15:5683";
+//static char *s_default_address = "udp://192.168.178.89:5683";
+static char *s_default_address = "udp://141.37.157.15:5683";
 
 /* Necessary for connection */
 int gettimeofday(struct timeval *tv, void *tzvp) {
