@@ -227,12 +227,14 @@ int main(void)
     pui8MACArray[4] = ((ui32User1 >>  8) & 0xff);
     pui8MACArray[5] = ((ui32User1 >> 16) & 0xff);
 
+    /* only for board with following MAC to use static IP in HTWG Network */
 	pui8MACArray[0] = 0x08;
 	pui8MACArray[1] = 0x00;
 	pui8MACArray[2] = 0x28;
 	pui8MACArray[3] = 0x5A;
 	pui8MACArray[4] = 0x8D;
 	pui8MACArray[5] = 0x59;
+
 
     // Initialize the lwIP library, using DHCP.
     lwIPInit(g_ui32SysClock, pui8MACArray, 0, 0, 0, IPADDR_USE_DHCP);
