@@ -13,24 +13,24 @@
 //*****************************************************************************
 
 /* Slave address */
-#define OPT3001_I2C_ADDRESS				0x44		// Datasheet P.22
-#define I2C_DEVICE              		I2C2_BASE	// I2C0..C4
+#define OPT3001_I2C_ADDRESS             0x44        // Datasheet P.22
+#define I2C_DEVICE                      I2C2_BASE   // I2C0..C4
 
 /* Register addresses */
-#define REG_RESULT                      0x00		// 16Bit-Register
+#define REG_RESULT                      0x00        // 16Bit-Register
 #define REG_CONFIGURATION               0x01
 #define REG_LOW_LIMIT                   0x02
 #define REG_HIGH_LIMIT                  0x03
 /* Identify the device */
-#define REG_MANUFACTURER_ID             0x7E		// Manufacturer ID: 5449h
-#define REG_DEVICE_ID                   0x7F		// Device ID: 		3001h
+#define REG_MANUFACTURER_ID             0x7E        // Manufacturer ID: 5449h
+#define REG_DEVICE_ID                   0x7F        // Device ID:       3001h
 
 /* Register values */
 #define CONFIG_RESET                    0xC810
-#define CONFIG_ENABLE                   0xCC10		// Scale: 40.95 | Continous... C010 = 100ms (issue)
+#define CONFIG_ENABLE                   0xCC10      // Scale: 40.95 | Continous... C010 = 100ms (issue)
 
 /* Bit values */
-#define DATA_RDY_BIT                    0x0080  	// Data ready
+#define DATA_RDY_BIT                    0x0080      // Data ready
 
 
 //*****************************************************************************

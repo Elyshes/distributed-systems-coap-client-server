@@ -46,12 +46,8 @@ char *s_default_address = "udp://:5683";
 void vTaskDisplay(void *pvParameters);
 void vTaskMongoose(void *pvParameters);
 
-// Other Prototypes
-
-
-
 // Required Functions
-// Needed by lwIP
+// - Needed by lwIP
 void lwIPHostTimerHandler(void)
 {
     uint32_t ui32NewIPAddress;
@@ -109,7 +105,7 @@ void lwIPHostTimerHandler(void)
     }
 }
 
-// Needed by Mongoose
+// - Needed by Mongoose
 int gettimeofday(struct timeval *tv, void *tzvp) {
   tv->tv_sec = time(NULL);
   tv->tv_usec = 0;
@@ -127,6 +123,7 @@ int mg_ssl_if_mbed_random(void *ctx, unsigned char *buf, size_t len){
 }
 
 // The error routine that is called if the driver library encounters an error.
+
 #ifdef DEBUG
 void __error__(char *pcFilename, uint32_t ui32Line)
 {
@@ -196,20 +193,31 @@ int main(void) {
     // Set RTOS Tasks
     xTaskCreate(vTaskDisplay, (const portCHAR *)"displayTask", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
     xTaskCreate(vTaskMongoose, (const portCHAR *)"mongooseTask", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+
+    // Start RTOS Tasks
     vTaskStartScheduler();
 
+    // Program should never reach here
     while(1){
     };
 }
 
+// RTOS Task for Display Output
+
 void vTaskDisplay(void *pvParameters) {
+
+    // Initialize Sensor and Display
     sensorOpt3001Setup();
     ioDisplaySetup();
+
+    // Keep updating indefinitely
     while(1) {
         ioDisplayUpdate(g_ui32IPAddress);
         vTaskDelay(pdMS_TO_TICKS(100));
     }
 }
+
+// RTOS Task for Mongoose
 
 void vTaskMongoose(void *pvParameters) {
 
@@ -229,6 +237,7 @@ void vTaskMongoose(void *pvParameters) {
     }
 
     UARTprintf("Listening for CoAP messages at %s\r\n", s_default_address);
+
     // Attach CoAP Event Handler to Connection
     mg_set_protocol_coap(nc);
 

@@ -89,7 +89,7 @@ void ioDisplayUpdate(uint32_t localIP)
 void colorUpdate(void) {
 
     uint16_t printColor = CFAF128128B0145T_color_black;
-    int brightness;
+    int size;
     int i;
 
     if(old_color != color) {
@@ -97,31 +97,31 @@ void colorUpdate(void) {
         switch(color) {
             case 'R':   // Red
                         printColor = CFAF128128B0145T_color_red;
-                        brightness = 10;
+                        size = 10;
                         break;
             case 'V':   // Violet
                         printColor = CFAF128128B0145T_color_violet;
-                        brightness = 8;
+                        size = 8;
                         break;
             case 'B':   // Blue
                         printColor = CFAF128128B0145T_color_blue;
-                        brightness = 6;
+                        size = 6;
                         break;
             case 'G':   // Green
                         printColor = CFAF128128B0145T_color_green;
-                        brightness = 4;
+                        size = 4;
                         break;
             case 'Y':   // Yellow
                         printColor = CFAF128128B0145T_color_yellow;
-                        brightness = 2;
+                        size = 2;
                         break;
             case 'S':   // Black
                         printColor = CFAF128128B0145T_color_black;
-                        brightness = 0;
+                        size = 0;
                         break;
             default:
                         printColor = CFAF128128B0145T_color_white;
-                        brightness = -5;
+                        size = -5;
                         break;
         }
 
@@ -133,8 +133,8 @@ void colorUpdate(void) {
         CFAF128128B0145T_line(90, 85, 110, 65, CFAF128128B0145T_color_black);
 
         // Print
-        if (brightness > 0) {
-            for(i = 0; i < brightness + 4; i++) {
+        if (size > 0) {
+            for(i = 0; i < size + 4; i++) {
                 CFAF128128B0145T_circle(100, 75, i, printColor);
             }
         }
