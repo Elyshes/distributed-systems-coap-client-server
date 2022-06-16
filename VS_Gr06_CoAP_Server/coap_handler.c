@@ -178,7 +178,7 @@ static void uartDisplay(struct mg_coap_message *cm)
 }
 
 // Discover
-static void mg_coap_send_by_discover(struct mg_connection *nc, uint16_t msg_id, struct mg_str token) {
+static void mg_coap_send_by_discover(struct mg_connection *nc, uint16_t msg_id, struct mg_str token){
 
     uint32_t res;
     struct mg_coap_message coap_message;
@@ -189,12 +189,14 @@ static void mg_coap_send_by_discover(struct mg_connection *nc, uint16_t msg_id, 
     coap_message.msg_type       = MG_COAP_MSG_ACK;
     coap_message.msg_id         = msg_id;                       // MSG-ID == Request MSG-ID
     coap_message.token          = token;                        // Token == Request Token
-    coap_message.code_class     = 2;                            // 2.05
+    coap_message.code_class     = 2;  // 2.05
     coap_message.code_detail    = 5;
 
+    // Content-Formats = application/link-format | 40
+    char *ctOpt = FORMAT_LINK;
+
     // Add new option 12 (content format) :
-    char* format = (char*)40;
-    mg_coap_add_option(&coap_message, 12, &format[0], 1);
+    mg_coap_add_option(&coap_message, 12, &ctOpt, 1);
 
     /* ====================================================================
      * Content of Discover
@@ -203,10 +205,7 @@ static void mg_coap_send_by_discover(struct mg_connection *nc, uint16_t msg_id, 
      * - rt     = resource type
      * - title  = title
      *=====================================================================*/
-    char cont_text[] =
-//            "</temperature>;"
-//                "title=\"Temperature\";"
-//                "rt=\"temperature-c\";"
+    char* cont_text =
 
             "</light>;"
                 "title=\"Brightness\";"
@@ -214,11 +213,10 @@ static void mg_coap_send_by_discover(struct mg_connection *nc, uint16_t msg_id, 
 
             "</color>;"
                 "title=\"Color\";"
-                "rt=\"color-char\""
-            ;
+                "rt=\"color-char\"";
 
-    coap_message.payload.p      = &cont_text[0];
-    coap_message.payload.len    = strlen(&cont_text[0]);
+    coap_message.payload.p      = cont_text;
+    coap_message.payload.len    = strlen(cont_text);
 
     res = mg_coap_send_message(nc, &coap_message);
 

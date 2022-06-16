@@ -15,6 +15,9 @@
 #include "CFAF128128B0145T/CFAF128128B0145T.h"
 #include "utils/uartstdio.h"
 
+
+#define FORMAT_LINK 40
+
 extern float LuxSensorValue;
 extern float dietemp;
 
