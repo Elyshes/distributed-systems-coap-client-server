@@ -2,7 +2,7 @@
  * display_handler.h
  *
  *  Created on: 15.06.2022
- *      Author: Sebastian
+ *      Author: Sebastian Broede
  *      Modified from VS_Gr04_LabProject_COAP by David Nguyen
  */
 

@@ -2,7 +2,7 @@
  * coap_handler.c
  *
  *  Created on: 14.06.2022
- *      Author: Sebastian
+ *      Author: Sebastian Broede
  *      Modified from VS_Gr04_LabProject_COAP by David Nguyen and Michael Stephens
  */
 

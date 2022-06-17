@@ -26,8 +26,6 @@
 extern uint32_t g_ui32SysClock;
 extern uint32_t coap_payload;
 
-
-
 int     io_ledState;
 char    textData[TEXT_MAX_NB_OF_TEXTES][TEXT_MAX_NB_OF_CHARS+1];
 rgb_t   rgbLED;
@@ -65,18 +63,13 @@ void io_init(void)
     ROM_GPIOPinWrite(LED2_PORT_BASE, LED2_PIN, 0);
 
 
-
-
     // Display
     // *******
     // Init Display module
     CFAF128128B0145T_init(BOOSTER_PACK_POSITION, g_ui32SysClock, 20000000);
 
 
-
-
     // Initialize Dummy I/Os
-
     // LED control test
     io_ledSetState(0);
 
@@ -95,8 +88,6 @@ void io_init(void)
 
     return;
 }
-
-
 
 void io_display(uint32_t localIP)
 {
@@ -134,7 +125,6 @@ void io_display(uint32_t localIP)
             break;
     }
 
-
     // Coap payload
         sprintf(&localStr_Caop_payload[0]," %d", coap_payload);
         l = strlen(&localStr_Caop_payload[0]);
@@ -145,18 +135,13 @@ void io_display(uint32_t localIP)
     CFAF128128B0145T_text(0, 70, "Received payload: ", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
     //                            123456789012345678901
     CFAF128128B0145T_text(0, 80, localStr_Caop_payload, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
-
-
     return;
 }
-
-
 
 int io_ledGetState(void)
 {
     return(io_ledState);
 }
-
 
 int io_ledSetState(int state)
 {
@@ -172,10 +157,6 @@ int io_ledSetState(int state)
     return(state);
 }
 
-
-
-
-
 // textID 0 or 1
 void io_textGet(int textID, char *pText)
 {
@@ -188,7 +169,6 @@ void io_textGet(int textID, char *pText)
     return;
 }
 
-
 // textID 0 or 1
 void io_textSet(int textID, char *pText)
 {
@@ -198,13 +178,10 @@ void io_textSet(int textID, char *pText)
     return;
 }
 
-
-
 rgb_t io_ledRGBGet(void)
 {
     return(rgbLED);
 }
-
 
 void io_ledRGBSet(rgb_t rgbValue)
 {
@@ -214,4 +191,3 @@ void io_ledRGBSet(rgb_t rgbValue)
 
     return;
 }
-

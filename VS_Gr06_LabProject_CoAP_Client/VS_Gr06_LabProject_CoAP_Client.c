@@ -1,5 +1,17 @@
-//Gruppe 06
-
+//********************************************************************************
+// CoAP CLient: server to actuator
+//
+// - group 06: Oliver Hahn, Sebastian Broede, Pascal Seiz
+//
+// - course: Verteilte Systeme
+//
+// - semester: summer semester 2022
+//
+// - description: This project sets up a coap client, that communicates with
+//   			  another coap server over udp using lwIP, mongoose and FreeRTOS.
+//
+//
+//********************************************************************************
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -40,7 +52,7 @@ uint32_t coap_payload= 0;		// The coap payload to show in display
 struct mg_mgr mgr;
 struct mg_connection *nc;
 
-//static char *s_default_address = "udp://192.168.178.89:5683";
+// Client needs to know the Server IP-address
 static char *s_default_address = "udp://141.37.157.15:5683";
 
 /* Necessary for connection */
@@ -53,6 +65,7 @@ int gettimeofday(struct timeval *tv, void *tzvp) {
 void mg_lwip_mgr_schedule_poll(struct mg_mgr *mgr) {
 }
 
+
 //*****************************************************************************
 //
 // Task declarations
@@ -61,9 +74,6 @@ void mg_lwip_mgr_schedule_poll(struct mg_mgr *mgr) {
 void vTaskDisplay(void *pvParameters);
 void mongooseClientTask(void *parameters);
 void mongooseSendingTask(void *parameters);
-
-
-
 
 
 //*****************************************************************************
@@ -77,9 +87,6 @@ __error__(char *pcFilename, uint32_t ui32Line)
 {
 }
 #endif
-
-
-
 
 
 //*****************************************************************************
@@ -149,7 +156,6 @@ void lwIPHostTimerHandler(void)
 }
 
 
-
 //*****************************************************************************
 //
 // Main function
@@ -176,22 +182,14 @@ int main(void)
                                              SYSCTL_USE_PLL |
                                              SYSCTL_CFG_VCO_480), 120000000);
 
-
-
-
-
     // Configure the device pins/IO-Ports
-    // ************************************
     io_init();
 
 
     // Configure uart debug port
-    // **************************************
     UARTStdioConfig(0, 115200, g_ui32SysClock);
 
-    //
     // Clear the terminal and print a banner.
-    //
     UARTprintf("\033[2J\033[H");
     UARTprintf("************************************************************************\n");
     UARTprintf("\tCoAP Client - Sensor to Actuator example\n");
@@ -201,7 +199,6 @@ int main(void)
     // Configure the hardware MAC address for Ethernet Controller filtering of
     // incoming packets.  The MAC address will be stored in the non-volatile
     // USER0 and USER1 registers.
-    // ************************************************************************
     MAP_FlashUserGet(&ui32User0, &ui32User1);
     if((ui32User0 == 0xffffffff) || (ui32User1 == 0xffffffff))
     {
@@ -219,7 +216,6 @@ int main(void)
     // Convert the 24/24 split MAC address from NV ram into a 32/16 split
     // MAC address needed to program the hardware registers, then program
     // the MAC address into the Ethernet Controller registers.
-    // ******************************************************************
     pui8MACArray[0] = ((ui32User0 >>  0) & 0xff);
     pui8MACArray[1] = ((ui32User0 >>  8) & 0xff);
     pui8MACArray[2] = ((ui32User0 >> 16) & 0xff);
@@ -242,7 +238,7 @@ int main(void)
     // Use 192.168.2.34    0xc0, 0xa8, 0x02, 0x22
     //lwIPInit(g_ui32SysClock, pui8MACArray, 0xc0a80222, 0, 0, IPADDR_USE_STATIC);
 
-    // Create new task
+    // Create new RTOS task
     xTaskCreate(vTaskDisplay, (const portCHAR *)"displaytask", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
     xTaskCreate(mongooseClientTask, (const portCHAR *)"mongooseClientTask", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
     xTaskCreate(mongooseSendingTask, (const portCHAR *)"mongooseSendingTask", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
@@ -250,14 +246,11 @@ int main(void)
     // Start the created tasks running
     vTaskStartScheduler();
 
-
-
     // Execution should never reach this point as the scheduler is running the tasks
     // If execution reaches here, then there might be insufficient heap memory for creating the idle task
     while(1){};
 
 }
-
 
 
 //*****************************************************************************
