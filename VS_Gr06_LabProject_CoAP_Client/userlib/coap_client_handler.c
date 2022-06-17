@@ -12,6 +12,9 @@
 #include "third_party/mongoose.h"
 
 
+extern uint32_t coap_payload;
+
+
 void coap_handler(struct mg_connection *nc, int ev, void *ev_data)
 {
 	struct mg_coap_message *incoming = (struct mg_coap_message *) ev_data;
@@ -144,6 +147,7 @@ void  coap_parse_ack(struct mg_coap_message *cm, struct mg_connection *nc)
 {
 	UARTprintf("\nPayload:  %s\n", cm->payload.p);
 	uint32_t brightness = atoi(cm->payload.p);
+	coap_payload = brightness;
 
 	uint16_t msg_id = cm->msg_id + 1; //increase msg_id to identify the new message;
 

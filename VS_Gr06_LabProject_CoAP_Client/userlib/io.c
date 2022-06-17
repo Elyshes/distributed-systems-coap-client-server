@@ -24,6 +24,7 @@
 
 // The system clock speed.
 extern uint32_t g_ui32SysClock;
+extern uint32_t coap_payload;
 
 
 
@@ -100,11 +101,12 @@ void io_init(void)
 void io_display(uint32_t localIP)
 {
     char    localStr[22];
+    char	localStr_Caop_payload[22];
     int     l;
 
 
-    // Titel                          123456789012345678901
-    CFAF128128B0145T_text(0, 20, "  Embedded Webserver ", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
+    // Titel                      123456789012345678901
+    CFAF128128B0145T_text(0, 20, "      COAP CLient    ", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
     CFAF128128B0145T_text(0, 30, "_____________________", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
 
 
@@ -131,6 +133,18 @@ void io_display(uint32_t localIP)
             CFAF128128B0145T_text(0, 50, localStr, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
             break;
     }
+
+
+    // Coap payload
+        sprintf(&localStr_Caop_payload[0]," %d", coap_payload);
+        l = strlen(&localStr_Caop_payload[0]);
+        memset(&localStr_Caop_payload[l], ' ', 21-l);    // fill with SPACEs
+        localStr_Caop_payload[21] = '\0';                // terminate string
+
+    //                            123456789012345678901
+    CFAF128128B0145T_text(0, 70, "Received payload: ", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
+    //                            123456789012345678901
+    CFAF128128B0145T_text(0, 80, localStr_Caop_payload, CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
 
 
     return;
