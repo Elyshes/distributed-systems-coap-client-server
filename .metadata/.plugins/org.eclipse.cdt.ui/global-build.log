@@ -745,3 +745,294 @@ gmake: Nothing to be done for 'all'.
 gmake: Nothing to be done for 'all'.
 
 **** Build Finished ****
+
+**** Clean-only build of configuration Debug for project VS_Gr07_Project_MQTT_pubClient ****
+
+"C:\\Tools\\TexasInstruments\\ccs1120\\ccs\\utils\\bin\\gmake" -k -j 8 clean -O 
+ 
+DEL /F  "VS_Gr07_Project_MQTT_pubClient.bin"  "VS_Gr07_Project_MQTT_pubClient.out" 
+DEL /F "io.obj" "main.obj" "mqtt_API.obj" "startup_ccs.obj" "drivers\pinout.obj" "paho_mqtt_embed_c_lib\MQTTConnectClient.obj" "paho_mqtt_embed_c_lib\MQTTConnectServer.obj" "paho_mqtt_embed_c_lib\MQTTDeserializePublish.obj" "paho_mqtt_embed_c_lib\MQTTFormat.obj" "paho_mqtt_embed_c_lib\MQTTPacket.obj" "paho_mqtt_embed_c_lib\MQTTSerializePublish.obj" "paho_mqtt_embed_c_lib\MQTTSubscribeClient.obj" "paho_mqtt_embed_c_lib\MQTTSubscribeServer.obj" "paho_mqtt_embed_c_lib\MQTTUnsubscribeClient.obj" "paho_mqtt_embed_c_lib\MQTTUnsubscribeServer.obj" "utils\locator.obj" "utils\lwiplib.obj" "utils\uartstdio.obj" "utils\ustdlib.obj" 
+DEL /F "io.d" "main.d" "mqtt_API.d" "startup_ccs.d" "drivers\pinout.d" "paho_mqtt_embed_c_lib\MQTTConnectClient.d" "paho_mqtt_embed_c_lib\MQTTConnectServer.d" "paho_mqtt_embed_c_lib\MQTTDeserializePublish.d" "paho_mqtt_embed_c_lib\MQTTFormat.d" "paho_mqtt_embed_c_lib\MQTTPacket.d" "paho_mqtt_embed_c_lib\MQTTSerializePublish.d" "paho_mqtt_embed_c_lib\MQTTSubscribeClient.d" "paho_mqtt_embed_c_lib\MQTTSubscribeServer.d" "paho_mqtt_embed_c_lib\MQTTUnsubscribeClient.d" "paho_mqtt_embed_c_lib\MQTTUnsubscribeServer.d" "utils\locator.d" "utils\lwiplib.d" "utils\uartstdio.d" "utils\ustdlib.d" 
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project VS_Gr07_Project_MQTT_pubClient ****
+
+"C:\\Tools\\TexasInstruments\\ccs1120\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../io.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="io.d_raw"  "../io.c"
+Finished building: "../io.c"
+ 
+Building file: "../startup_ccs.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="startup_ccs.d_raw"  "../startup_ccs.c"
+Finished building: "../startup_ccs.c"
+ 
+Building file: "../paho_mqtt_embed_c_lib/MQTTDeserializePublish.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="paho_mqtt_embed_c_lib/MQTTDeserializePublish.d_raw" --obj_directory="paho_mqtt_embed_c_lib"  "../paho_mqtt_embed_c_lib/MQTTDeserializePublish.c"
+Finished building: "../paho_mqtt_embed_c_lib/MQTTDeserializePublish.c"
+ 
+Building file: "../main.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../mqtt_API.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mqtt_API.d_raw"  "../mqtt_API.c"
+"../mqtt_API.c", line 49: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 50: warning #994-D: missing return statement at end of non-void function "poll"
+"../mqtt_API.c", line 55: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 77: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 85: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 86: warning #194-D: unrecognized character escape sequence
+"../mqtt_API.c", line 93: warning #225-D: function "get_mqtt_pack_type_nb" declared implicitly
+"../mqtt_API.c", line 95: warning #225-D: function "pack_type_uc2string" declared implicitly
+"../mqtt_API.c", line 95: warning #145-D: a value of type "int" cannot be used to initialize an entity of type "char *"
+"../mqtt_API.c", line 98: warning #194-D: unrecognized character escape sequence
+"../mqtt_API.c", line 111: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 119: warning #161-D: declaration is incompatible with previous "get_mqtt_pack_type_nb" (declared at line 93)
+"../mqtt_API.c", line 135: warning #161-D: declaration is incompatible with previous "pack_type_uc2string" (declared at line 95)
+"../mqtt_API.c", line 193: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 195: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 202: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 239: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 242: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 244: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 256: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 258: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 260: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 271: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 299: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 314: warning #225-D: function "strlen" declared implicitly
+"../mqtt_API.c", line 322: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 334: warning #225-D: function "UARTprintf" declared implicitly
+Finished building: "../mqtt_API.c"
+ 
+Building file: "../paho_mqtt_embed_c_lib/MQTTConnectServer.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="paho_mqtt_embed_c_lib/MQTTConnectServer.d_raw" --obj_directory="paho_mqtt_embed_c_lib"  "../paho_mqtt_embed_c_lib/MQTTConnectServer.c"
+Finished building: "../paho_mqtt_embed_c_lib/MQTTConnectServer.c"
+ 
+Building file: "C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl/drivers/pinout.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="drivers/pinout.d_raw" --obj_directory="drivers"  "C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl/drivers/pinout.c"
+Finished building: "C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl/drivers/pinout.c"
+ 
+Building file: "../paho_mqtt_embed_c_lib/MQTTConnectClient.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="paho_mqtt_embed_c_lib/MQTTConnectClient.d_raw" --obj_directory="paho_mqtt_embed_c_lib"  "../paho_mqtt_embed_c_lib/MQTTConnectClient.c"
+"../paho_mqtt_embed_c_lib/MQTTConnectClient.c", line 147: warning #225-D: function "UARTprintf" declared implicitly
+Finished building: "../paho_mqtt_embed_c_lib/MQTTConnectClient.c"
+ 
+Building file: "../paho_mqtt_embed_c_lib/MQTTFormat.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="paho_mqtt_embed_c_lib/MQTTFormat.d_raw" --obj_directory="paho_mqtt_embed_c_lib"  "../paho_mqtt_embed_c_lib/MQTTFormat.c"
+Finished building: "../paho_mqtt_embed_c_lib/MQTTFormat.c"
+ 
+Building file: "../paho_mqtt_embed_c_lib/MQTTSerializePublish.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="paho_mqtt_embed_c_lib/MQTTSerializePublish.d_raw" --obj_directory="paho_mqtt_embed_c_lib"  "../paho_mqtt_embed_c_lib/MQTTSerializePublish.c"
+Finished building: "../paho_mqtt_embed_c_lib/MQTTSerializePublish.c"
+ 
+Building file: "../paho_mqtt_embed_c_lib/MQTTSubscribeServer.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="paho_mqtt_embed_c_lib/MQTTSubscribeServer.d_raw" --obj_directory="paho_mqtt_embed_c_lib"  "../paho_mqtt_embed_c_lib/MQTTSubscribeServer.c"
+Finished building: "../paho_mqtt_embed_c_lib/MQTTSubscribeServer.c"
+ 
+Building file: "../paho_mqtt_embed_c_lib/MQTTSubscribeClient.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="paho_mqtt_embed_c_lib/MQTTSubscribeClient.d_raw" --obj_directory="paho_mqtt_embed_c_lib"  "../paho_mqtt_embed_c_lib/MQTTSubscribeClient.c"
+Finished building: "../paho_mqtt_embed_c_lib/MQTTSubscribeClient.c"
+ 
+Building file: "../paho_mqtt_embed_c_lib/MQTTUnsubscribeClient.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="paho_mqtt_embed_c_lib/MQTTUnsubscribeClient.d_raw" --obj_directory="paho_mqtt_embed_c_lib"  "../paho_mqtt_embed_c_lib/MQTTUnsubscribeClient.c"
+Finished building: "../paho_mqtt_embed_c_lib/MQTTUnsubscribeClient.c"
+ 
+Building file: "../paho_mqtt_embed_c_lib/MQTTUnsubscribeServer.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="paho_mqtt_embed_c_lib/MQTTUnsubscribeServer.d_raw" --obj_directory="paho_mqtt_embed_c_lib"  "../paho_mqtt_embed_c_lib/MQTTUnsubscribeServer.c"
+Finished building: "../paho_mqtt_embed_c_lib/MQTTUnsubscribeServer.c"
+ 
+Building file: "../paho_mqtt_embed_c_lib/MQTTPacket.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="paho_mqtt_embed_c_lib/MQTTPacket.d_raw" --obj_directory="paho_mqtt_embed_c_lib"  "../paho_mqtt_embed_c_lib/MQTTPacket.c"
+Finished building: "../paho_mqtt_embed_c_lib/MQTTPacket.c"
+ 
+Building file: "C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/utils/locator.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="utils/locator.d_raw" --obj_directory="utils"  "C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/utils/locator.c"
+Finished building: "C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/utils/locator.c"
+ 
+Building file: "C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/utils/uartstdio.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="utils/uartstdio.d_raw" --obj_directory="utils"  "C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/utils/uartstdio.c"
+Finished building: "C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/utils/uartstdio.c"
+ 
+Building file: "C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/utils/ustdlib.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="utils/ustdlib.d_raw" --obj_directory="utils"  "C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/utils/ustdlib.c"
+Finished building: "C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/utils/ustdlib.c"
+ 
+Building file: "C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/utils/lwiplib.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="utils/lwiplib.d_raw" --obj_directory="utils"  "C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/utils/lwiplib.c"
+Finished building: "C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/utils/lwiplib.c"
+ 
+Building target: "VS_Gr07_Project_MQTT_pubClient.out"
+Invoking: ARM Linker
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"enet_io_ccs.map" --heap_size=0 --stack_size=1024 -i"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/lib" -i"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="VS_Gr07_Project_MQTT_pubClient_linkInfo.xml" --rom_model -o "VS_Gr07_Project_MQTT_pubClient.out" "./io.obj" "./main.obj" "./mqtt_API.obj" "./startup_ccs.obj" "./drivers/pinout.obj" "./paho_mqtt_embed_c_lib/MQTTConnectClient.obj" "./paho_mqtt_embed_c_lib/MQTTConnectServer.obj" "./paho_mqtt_embed_c_lib/MQTTDeserializePublish.obj" "./paho_mqtt_embed_c_lib/MQTTFormat.obj" "./paho_mqtt_embed_c_lib/MQTTPacket.obj" "./paho_mqtt_embed_c_lib/MQTTSerializePublish.obj" "./paho_mqtt_embed_c_lib/MQTTSubscribeClient.obj" "./paho_mqtt_embed_c_lib/MQTTSubscribeServer.obj" "./paho_mqtt_embed_c_lib/MQTTUnsubscribeClient.obj" "./paho_mqtt_embed_c_lib/MQTTUnsubscribeServer.obj" "./utils/locator.obj" "./utils/lwiplib.obj" "./utils/uartstdio.obj" "./utils/ustdlib.obj" "../enet_io_ccs.cmd"  -l"C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "VS_Gr07_Project_MQTT_pubClient.out"
+ 
+"C:/Tools/TexasInstruments/ccs1120/ccs/utils/tiobj2bin/tiobj2bin" "VS_Gr07_Project_MQTT_pubClient.out" "VS_Gr07_Project_MQTT_pubClient.bin" "C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armofd" "C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armhex" "C:/Tools/TexasInstruments/ccs1120/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project VS_Gr07_Project_MQTT_pubClient ****
+
+"C:\\Tools\\TexasInstruments\\ccs1120\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../mqtt_API.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mqtt_API.d_raw"  "../mqtt_API.c"
+"../mqtt_API.c", line 49: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 50: warning #994-D: missing return statement at end of non-void function "poll"
+"../mqtt_API.c", line 55: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 77: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 85: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 86: warning #194-D: unrecognized character escape sequence
+"../mqtt_API.c", line 93: warning #225-D: function "get_mqtt_pack_type_nb" declared implicitly
+"../mqtt_API.c", line 95: warning #225-D: function "pack_type_uc2string" declared implicitly
+"../mqtt_API.c", line 95: warning #145-D: a value of type "int" cannot be used to initialize an entity of type "char *"
+"../mqtt_API.c", line 98: warning #194-D: unrecognized character escape sequence
+"../mqtt_API.c", line 111: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 119: warning #161-D: declaration is incompatible with previous "get_mqtt_pack_type_nb" (declared at line 93)
+"../mqtt_API.c", line 135: warning #161-D: declaration is incompatible with previous "pack_type_uc2string" (declared at line 95)
+"../mqtt_API.c", line 193: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 195: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 202: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 239: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 242: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 244: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 256: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 258: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 260: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 271: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 299: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 314: warning #225-D: function "strlen" declared implicitly
+"../mqtt_API.c", line 322: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 334: warning #225-D: function "UARTprintf" declared implicitly
+Finished building: "../mqtt_API.c"
+ 
+Building target: "VS_Gr07_Project_MQTT_pubClient.out"
+Invoking: ARM Linker
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"enet_io_ccs.map" --heap_size=0 --stack_size=1024 -i"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/lib" -i"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="VS_Gr07_Project_MQTT_pubClient_linkInfo.xml" --rom_model -o "VS_Gr07_Project_MQTT_pubClient.out" "./io.obj" "./main.obj" "./mqtt_API.obj" "./startup_ccs.obj" "./drivers/pinout.obj" "./paho_mqtt_embed_c_lib/MQTTConnectClient.obj" "./paho_mqtt_embed_c_lib/MQTTConnectServer.obj" "./paho_mqtt_embed_c_lib/MQTTDeserializePublish.obj" "./paho_mqtt_embed_c_lib/MQTTFormat.obj" "./paho_mqtt_embed_c_lib/MQTTPacket.obj" "./paho_mqtt_embed_c_lib/MQTTSerializePublish.obj" "./paho_mqtt_embed_c_lib/MQTTSubscribeClient.obj" "./paho_mqtt_embed_c_lib/MQTTSubscribeServer.obj" "./paho_mqtt_embed_c_lib/MQTTUnsubscribeClient.obj" "./paho_mqtt_embed_c_lib/MQTTUnsubscribeServer.obj" "./utils/locator.obj" "./utils/lwiplib.obj" "./utils/uartstdio.obj" "./utils/ustdlib.obj" "../enet_io_ccs.cmd"  -l"C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "VS_Gr07_Project_MQTT_pubClient.out"
+ 
+"C:/Tools/TexasInstruments/ccs1120/ccs/utils/tiobj2bin/tiobj2bin" "VS_Gr07_Project_MQTT_pubClient.out" "VS_Gr07_Project_MQTT_pubClient.bin" "C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armofd" "C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armhex" "C:/Tools/TexasInstruments/ccs1120/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project VS_Gr07_Project_MQTT_pubClient ****
+
+"C:\\Tools\\TexasInstruments\\ccs1120\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../mqtt_API.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mqtt_API.d_raw"  "../mqtt_API.c"
+"../mqtt_API.c", line 49: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 50: warning #994-D: missing return statement at end of non-void function "poll"
+"../mqtt_API.c", line 55: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 77: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 85: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 86: warning #194-D: unrecognized character escape sequence
+"../mqtt_API.c", line 93: warning #225-D: function "get_mqtt_pack_type_nb" declared implicitly
+"../mqtt_API.c", line 95: warning #225-D: function "pack_type_uc2string" declared implicitly
+"../mqtt_API.c", line 95: warning #145-D: a value of type "int" cannot be used to initialize an entity of type "char *"
+"../mqtt_API.c", line 98: warning #194-D: unrecognized character escape sequence
+"../mqtt_API.c", line 111: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 119: warning #161-D: declaration is incompatible with previous "get_mqtt_pack_type_nb" (declared at line 93)
+"../mqtt_API.c", line 135: warning #161-D: declaration is incompatible with previous "pack_type_uc2string" (declared at line 95)
+"../mqtt_API.c", line 193: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 195: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 202: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 239: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 242: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 244: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 256: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 258: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 260: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 271: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 299: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 314: warning #225-D: function "strlen" declared implicitly
+"../mqtt_API.c", line 322: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 334: warning #225-D: function "UARTprintf" declared implicitly
+Finished building: "../mqtt_API.c"
+ 
+Building target: "VS_Gr07_Project_MQTT_pubClient.out"
+Invoking: ARM Linker
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"enet_io_ccs.map" --heap_size=0 --stack_size=1024 -i"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/lib" -i"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="VS_Gr07_Project_MQTT_pubClient_linkInfo.xml" --rom_model -o "VS_Gr07_Project_MQTT_pubClient.out" "./io.obj" "./main.obj" "./mqtt_API.obj" "./startup_ccs.obj" "./drivers/pinout.obj" "./paho_mqtt_embed_c_lib/MQTTConnectClient.obj" "./paho_mqtt_embed_c_lib/MQTTConnectServer.obj" "./paho_mqtt_embed_c_lib/MQTTDeserializePublish.obj" "./paho_mqtt_embed_c_lib/MQTTFormat.obj" "./paho_mqtt_embed_c_lib/MQTTPacket.obj" "./paho_mqtt_embed_c_lib/MQTTSerializePublish.obj" "./paho_mqtt_embed_c_lib/MQTTSubscribeClient.obj" "./paho_mqtt_embed_c_lib/MQTTSubscribeServer.obj" "./paho_mqtt_embed_c_lib/MQTTUnsubscribeClient.obj" "./paho_mqtt_embed_c_lib/MQTTUnsubscribeServer.obj" "./utils/locator.obj" "./utils/lwiplib.obj" "./utils/uartstdio.obj" "./utils/ustdlib.obj" "../enet_io_ccs.cmd"  -l"C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "VS_Gr07_Project_MQTT_pubClient.out"
+ 
+"C:/Tools/TexasInstruments/ccs1120/ccs/utils/tiobj2bin/tiobj2bin" "VS_Gr07_Project_MQTT_pubClient.out" "VS_Gr07_Project_MQTT_pubClient.bin" "C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armofd" "C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armhex" "C:/Tools/TexasInstruments/ccs1120/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project VS_Gr07_Project_MQTT_pubClient ****
+
+"C:\\Tools\\TexasInstruments\\ccs1120\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+Building file: "../mqtt_API.c"
+Invoking: ARM Compiler
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient" --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr07_Project_MQTT_pubClient/paho_mqtt_embed_c_lib" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual --preproc_with_compile --preproc_dependency="mqtt_API.d_raw"  "../mqtt_API.c"
+"../mqtt_API.c", line 49: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 50: warning #994-D: missing return statement at end of non-void function "poll"
+"../mqtt_API.c", line 55: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 77: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 85: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 86: warning #194-D: unrecognized character escape sequence
+"../mqtt_API.c", line 93: warning #225-D: function "get_mqtt_pack_type_nb" declared implicitly
+"../mqtt_API.c", line 95: warning #225-D: function "pack_type_uc2string" declared implicitly
+"../mqtt_API.c", line 95: warning #145-D: a value of type "int" cannot be used to initialize an entity of type "char *"
+"../mqtt_API.c", line 98: warning #194-D: unrecognized character escape sequence
+"../mqtt_API.c", line 111: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 119: warning #161-D: declaration is incompatible with previous "get_mqtt_pack_type_nb" (declared at line 93)
+"../mqtt_API.c", line 135: warning #161-D: declaration is incompatible with previous "pack_type_uc2string" (declared at line 95)
+"../mqtt_API.c", line 193: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 195: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 202: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 239: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 242: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 244: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 256: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 258: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 260: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 271: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 299: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 314: warning #225-D: function "strlen" declared implicitly
+"../mqtt_API.c", line 322: warning #225-D: function "UARTprintf" declared implicitly
+"../mqtt_API.c", line 334: warning #225-D: function "UARTprintf" declared implicitly
+Finished building: "../mqtt_API.c"
+ 
+Building target: "VS_Gr07_Project_MQTT_pubClient.out"
+Invoking: ARM Linker
+"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA2 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --ual -z -m"enet_io_ccs.map" --heap_size=0 --stack_size=1024 -i"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/lib" -i"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="VS_Gr07_Project_MQTT_pubClient_linkInfo.xml" --rom_model -o "VS_Gr07_Project_MQTT_pubClient.out" "./io.obj" "./main.obj" "./mqtt_API.obj" "./startup_ccs.obj" "./drivers/pinout.obj" "./paho_mqtt_embed_c_lib/MQTTConnectClient.obj" "./paho_mqtt_embed_c_lib/MQTTConnectServer.obj" "./paho_mqtt_embed_c_lib/MQTTDeserializePublish.obj" "./paho_mqtt_embed_c_lib/MQTTFormat.obj" "./paho_mqtt_embed_c_lib/MQTTPacket.obj" "./paho_mqtt_embed_c_lib/MQTTSerializePublish.obj" "./paho_mqtt_embed_c_lib/MQTTSubscribeClient.obj" "./paho_mqtt_embed_c_lib/MQTTSubscribeServer.obj" "./paho_mqtt_embed_c_lib/MQTTUnsubscribeClient.obj" "./paho_mqtt_embed_c_lib/MQTTUnsubscribeServer.obj" "./utils/locator.obj" "./utils/lwiplib.obj" "./utils/uartstdio.obj" "./utils/ustdlib.obj" "../enet_io_ccs.cmd"  -l"C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" -llibc.a 
+<Linking>
+Finished building target: "VS_Gr07_Project_MQTT_pubClient.out"
+ 
+"C:/Tools/TexasInstruments/ccs1120/ccs/utils/tiobj2bin/tiobj2bin" "VS_Gr07_Project_MQTT_pubClient.out" "VS_Gr07_Project_MQTT_pubClient.bin" "C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armofd" "C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armhex" "C:/Tools/TexasInstruments/ccs1120/ccs/utils/tiobj2bin/mkhex4bin"
+ 
+
+**** Build Finished ****

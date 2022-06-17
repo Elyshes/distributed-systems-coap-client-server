@@ -6,10 +6,10 @@
 	<section name="com.ti.ccstudio.project.ui.internal.properties.DynamicPropertiesPageManager">
 	</section>
 	<section name="com.ti.ccstudio.project.ui.internal.wizards.importexport.ProjectImportPage">
-		<item key="CCS.BROWSE_ZIPS_FILTER" value="C:\Users\pasca\Downloads\Group5_CoAP_Server_Actuator-20220604\VS_Gr05_CoAP_Server_Actuator.zip"/>
+		<item key="CCS.BROWSE_ZIPS_FILTER" value="C:\Users\pascal\Downloads\MQTT Gruppe 07 Client-20220617\VS_Gr07_Project_MQTT_pubClient.zip"/>
 		<item key="CCS.BROWSE_DIRS_FILTER" value="C:\Verteilte_Systeme_CoAP_Client_SensorToActuator"/>
 		<item key="CCS.COPY_INTO_WORKSPACE" value="true"/>
 		<item key="CCS.IMPORT_REFERENCED_PROJECTS" value="true"/>
-		<item key="CCS.IMPORT_FROM_ARCHIVE" value="false"/>
+		<item key="CCS.IMPORT_FROM_ARCHIVE" value="true"/>
 	</section>
 </section>
