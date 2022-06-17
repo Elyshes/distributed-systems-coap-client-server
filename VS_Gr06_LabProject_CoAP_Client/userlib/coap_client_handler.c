@@ -11,9 +11,7 @@
 #include <userlib/coap_client_handler.h>
 #include "third_party/mongoose.h"
 
-
 extern uint32_t coap_payload;
-
 
 void coap_handler(struct mg_connection *nc, int ev, void *ev_data)
 {
@@ -50,7 +48,6 @@ void coap_handler(struct mg_connection *nc, int ev, void *ev_data)
 		}
 	}
 }
-
 
 void coap_send_get(struct mg_connection *nc, char *uri_path, uint16_t msg_id)
 {
@@ -142,7 +139,6 @@ void coap_send_put(struct mg_connection *nc, char *uri_path, uint16_t msg_id, ch
 	mg_coap_free_options(&cm);
 }
 
-
 void  coap_parse_ack(struct mg_coap_message *cm, struct mg_connection *nc)
 {
 	UARTprintf("\nPayload:  %s\n", cm->payload.p);
@@ -182,10 +178,3 @@ void  coap_parse_ack(struct mg_coap_message *cm, struct mg_connection *nc)
 		coap_send_put(nc, uri_path2, msg_id, COLOR_RED);
 	}
 }
-
-
-
-
-
-
-

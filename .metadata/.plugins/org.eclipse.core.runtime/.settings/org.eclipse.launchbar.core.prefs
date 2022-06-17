@@ -1,8 +1,11 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:webserver_1,org.eclipse.launchbar.core.descriptorType.default\:webserver_1_FreeRTOS,org.eclipse.launchbar.core.descriptorType.default\:VS_Gr06_LabProject_CoAP_Client
+activeLaunchTarget=null\:---
+configDescList=
 eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:Mongoose_TM4C129_BM/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Mongoose_TM4C129_BM/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:VS_Gr06_LabProject_CoAP_Client/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:VS_Gr06_LabProject_CoAP_Client/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:webserver_1/activeLaunchMode=run

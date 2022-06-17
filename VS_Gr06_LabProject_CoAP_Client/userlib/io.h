@@ -12,6 +12,7 @@ extern "C"
 {
 #endif
 
+
 //*****************************************************************************
 //
 // Hardware connection for the user LED.
@@ -24,10 +25,8 @@ extern "C"
 #define LED2_PIN                GPIO_PIN_0
 
 
-
 /** @brief Select booster pack position (1 or 2)    */
 #define BOOSTER_PACK_POSITION   2
-
 
 
 #define TEXT_MAX_NB_OF_TEXTES   3
@@ -39,7 +38,6 @@ typedef struct{
     unsigned char g;
     unsigned char b;
 } rgb_t;
-
 
 
 //*****************************************************************************
@@ -59,8 +57,6 @@ void io_init(void);
 void io_display(uint32_t localIP);
 
 
-
-
 /** @brief Get state of test LED
 * @return  state 0(off) or 1(on)
 */
@@ -71,7 +67,6 @@ int io_ledGetState(void);
 * @return state 0(off) or 1(on)
 */
 int io_ledSetState(int state);
-
 
 
 /** @brief Get demo text
@@ -87,7 +82,6 @@ void io_textGet(int textID, char *pText);
 void io_textSet(int textID, char *pText);
 
 
-
 /** @brief Get demo rgb values
 * @return structure of type rgb_t with the current rgb values
 */
@@ -97,7 +91,6 @@ rgb_t io_ledRGBGet(void);
 * @param  rgbValue: structure of type rgb_t with the current rgb values
 */
 void io_ledRGBSet(rgb_t rgbValue);
-
 
 
 #ifdef __cplusplus

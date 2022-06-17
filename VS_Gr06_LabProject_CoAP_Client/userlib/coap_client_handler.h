@@ -42,11 +42,9 @@
 #define COAP_OPTION_CONTENTFORMAT 12
 
 void coap_handler(struct mg_connection *nc, int ev, void *ev_data);
-
 void coap_send_get(struct mg_connection *nc, char *uri_path, uint16_t msg_id);
 void coap_send_post(struct mg_connection *nc, char *uri_path, uint16_t msg_id, char *payload);
 void coap_send_put(struct mg_connection *nc, char *uri_path, uint16_t msg_id, char *payload);
-
 void  coap_parse_ack(struct mg_coap_message *cm, struct mg_connection *nc);
 
 #endif /* USERLIB_COAP_CLIENT_HANDLER_H_ */

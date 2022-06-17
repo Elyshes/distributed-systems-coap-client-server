@@ -7,9 +7,9 @@
 	</section>
 	<section name="com.ti.ccstudio.project.ui.internal.wizards.importexport.ProjectImportPage">
 		<item key="CCS.BROWSE_ZIPS_FILTER" value="C:\Users\pasca\Downloads\Group5_CoAP_Server_Actuator-20220604\VS_Gr05_CoAP_Server_Actuator.zip"/>
-		<item key="CCS.BROWSE_DIRS_FILTER" value="C:\ccs-vs-repo\workspace_ccs_vs\webserver_1_FreeRTOS"/>
+		<item key="CCS.BROWSE_DIRS_FILTER" value="C:\Verteilte_Systeme_CoAP_Client_SensorToActuator"/>
 		<item key="CCS.COPY_INTO_WORKSPACE" value="true"/>
-		<item key="CCS.IMPORT_REFERENCED_PROJECTS" value="false"/>
+		<item key="CCS.IMPORT_REFERENCED_PROJECTS" value="true"/>
 		<item key="CCS.IMPORT_FROM_ARCHIVE" value="false"/>
 	</section>
 </section>
