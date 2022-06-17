@@ -40,8 +40,8 @@ uint32_t coap_payload= 0;		// The coap payload to show in display
 struct mg_mgr mgr;
 struct mg_connection *nc;
 
-static char *s_default_address = "udp://192.168.178.89:5683";
-//static char *s_default_address = "udp://141.37.157.15:5683";
+//static char *s_default_address = "udp://192.168.178.89:5683";
+static char *s_default_address = "udp://141.37.157.15:5683";
 
 /* Necessary for connection */
 int gettimeofday(struct timeval *tv, void *tzvp) {
@@ -227,13 +227,13 @@ int main(void)
     pui8MACArray[4] = ((ui32User1 >>  8) & 0xff);
     pui8MACArray[5] = ((ui32User1 >> 16) & 0xff);
 
-    /* only for board with following MAC to use static IP in HTWG Network */
-	pui8MACArray[0] = 0x08;
-	pui8MACArray[1] = 0x00;
-	pui8MACArray[2] = 0x28;
-	pui8MACArray[3] = 0x5A;
-	pui8MACArray[4] = 0x8D;
-	pui8MACArray[5] = 0x59;
+//    /* only for board with following MAC to use static IP in HTWG Network */
+//	pui8MACArray[0] = 0x08;
+//	pui8MACArray[1] = 0x00;
+//	pui8MACArray[2] = 0x28;
+//	pui8MACArray[3] = 0x5A;
+//	pui8MACArray[4] = 0x8D;
+//	pui8MACArray[5] = 0x59;
 
 
     // Initialize the lwIP library, using DHCP.
