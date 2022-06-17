@@ -135,7 +135,6 @@ void lwIPHostTimerHandler(void)
             // Display the new IP address.
             //
 			UARTprintf("IP Address: %s\n", ipaddr_ntoa((const ip_addr_t *) &ui32NewIPAddress));
-            UARTprintf("Open a browser and enter the IP address.\n");
         }
 
         //

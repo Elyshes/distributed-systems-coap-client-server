@@ -29,6 +29,7 @@
 
 #include "helper_functions/lightsensor_handler.h"
 #include "helper_functions/display_handler.h"
+#include "helper_functions/temperature_handler.h"
 
 #include "inc/hw_ints.h"
 #include "inc/hw_memmap.h"
