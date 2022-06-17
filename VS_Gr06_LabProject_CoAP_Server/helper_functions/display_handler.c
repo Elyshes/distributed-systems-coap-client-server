@@ -2,7 +2,7 @@
  * display_handler.c
  *
  *  Created on: 15.06.2022
- *      Author: Sebastian
+ *      Author: Sebastian Broede
  *      Modified from VS_Gr04_LabProject_COAP by David Nguyen and Michael Stephens
  */
 
@@ -96,23 +96,23 @@ void colorUpdate(void) {
         switch(color) {
             case 'R':   // Red
                         printColor = CFAF128128B0145T_color_red;
-                        size = 10;
+                        size = 14;
                         break;
             case 'V':   // Violet
                         printColor = CFAF128128B0145T_color_violet;
-                        size = 8;
+                        size = 12;
                         break;
             case 'B':   // Blue
                         printColor = CFAF128128B0145T_color_blue;
-                        size = 6;
+                        size = 10;
                         break;
             case 'G':   // Green
                         printColor = CFAF128128B0145T_color_green;
-                        size = 4;
+                        size = 8;
                         break;
             case 'Y':   // Yellow
                         printColor = CFAF128128B0145T_color_yellow;
-                        size = 2;
+                        size = 6;
                         break;
             case 'S':   // Black
                         printColor = CFAF128128B0145T_color_black;
@@ -133,7 +133,7 @@ void colorUpdate(void) {
 
         // Print
         if (size > 0) {
-            for(i = 0; i < size + 4; i++) {
+            for(i = 0; i < size; i++) {
                 CFAF128128B0145T_circle(100, 75, i, printColor);
             }
         }

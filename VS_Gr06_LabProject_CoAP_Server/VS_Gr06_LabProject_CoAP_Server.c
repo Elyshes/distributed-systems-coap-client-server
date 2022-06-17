@@ -1,13 +1,21 @@
-/*
- * server.c
- *
- *  Created on: 13.06.2022
- *      Author: Sebastian
- *      Modified from webserver_1.c - simple embedded web server by Boris Boeck
- */
+//********************************************************************************
+// CoAP CLient: server to actuator
+//
+// - group 06: Oliver Hahn, Sebastian Broede, Pascal Seiz
+//
+// - course: Verteilte Systeme
+//
+// - semester: summer semester 2022
+//
+// - description: This project sets up the coap server for the corresponding
+//                coap client, it answers GET and PUT messages by the client over udp using
+//                lwIP, mongoose and FreeRTOS.
+//
+//
+//********************************************************************************
+
 
 // Includes
-
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
@@ -35,14 +43,13 @@
 #include "utils/uartstdio.h"
 #include "utils/ustdlib.h"
 
-// Global Variables
 
+// Global Variables
 uint32_t g_ui32SysClock;
 uint32_t g_ui32IPAddress;
 char *s_default_address = "udp://:5683";
 
 // Prototypes for RTOS Tasks
-
 void vTaskDisplay(void *pvParameters);
 void vTaskMongoose(void *pvParameters);
 
@@ -123,7 +130,6 @@ int mg_ssl_if_mbed_random(void *ctx, unsigned char *buf, size_t len){
 }
 
 // The error routine that is called if the driver library encounters an error.
-
 #ifdef DEBUG
 void __error__(char *pcFilename, uint32_t ui32Line)
 {
@@ -131,7 +137,6 @@ void __error__(char *pcFilename, uint32_t ui32Line)
 #endif
 
 // Main Function
-
 int main(void) {
 
     uint32_t ui32User0, ui32User1;
@@ -205,7 +210,6 @@ int main(void) {
 }
 
 // RTOS Task for Display Output
-
 void vTaskDisplay(void *pvParameters) {
 
     // Initialize Sensor and Display
@@ -221,7 +225,6 @@ void vTaskDisplay(void *pvParameters) {
 }
 
 // RTOS Task for Mongoose
-
 void vTaskMongoose(void *pvParameters) {
 
     // Mongoose Structures

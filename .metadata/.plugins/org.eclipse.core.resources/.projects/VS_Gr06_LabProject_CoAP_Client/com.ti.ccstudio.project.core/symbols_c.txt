@@ -1,9 +1,9 @@
 #define __unsigned_chars__ 1	/* Predefined */
 #define __PRAGMA_REDEFINE_EXTNAME 1	/* Predefined */
-#define __DATE__ "Jun  4 2022"	/* Predefined */
-#define __TIME__ "16:24:41"	/* Predefined */
+#define __DATE__ "Jun 17 2022"	/* Predefined */
+#define __TIME__ "09:58:17"	/* Predefined */
 #define __STDC__ 1	/* Predefined */
-#define __STDC_VERSION__ 199409L	/* Predefined */
+#define __STDC_VERSION__ 199901L	/* Predefined */
 #define __STDC_HOSTED__ 1	/* Predefined */
 #define __TI_C99_COMPLEX_ENABLED__ 1	/* Predefined */
 #define __STDC_NO_THREADS__ 1	/* Predefined */

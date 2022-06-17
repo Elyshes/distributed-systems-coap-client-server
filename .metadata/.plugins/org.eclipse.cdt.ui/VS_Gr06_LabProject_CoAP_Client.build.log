@@ -3,16 +3,6 @@
 
 "C:\\Tools\\TexasInstruments\\ccs1120\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
  
-Building file: "../webserver_1.c"
-Invoking: ARM Compiler
-"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr06_LabProject_CoAP_Client" --include_path="C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --include_path="C:/Tools/ThirdParty/FreeRTOSv202112.00/FreeRTOS/Source/include" --include_path="C:/Tools/ThirdParty/FreeRTOSv202112.00/FreeRTOS/Source/portable/CCS/ARM_CM4F" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/examples/boards/ek-tm4c129exl" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/apps" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/ports/tiva-tm4c129/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include" --include_path="C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/third_party/lwip-1.4.1/src/include/ipv4" --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -k --preproc_with_compile --preproc_dependency="webserver_1.d_raw"  "../webserver_1.c"
-Finished building: "../webserver_1.c"
- 
-Building target: "VS_Gr06_LabProject_CoAP_Client.out"
-Invoking: ARM Linker
-"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C129ENCPDT --define=TARGET_IS_TM4C129_RA1 -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -k -z -m"VS_Gr06_LabProject_CoAP_Client.map" --heap_size=1024 --stack_size=4096 -i"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/lib" -i"C:/Tools/TexasInstruments/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="VS_Gr06_LabProject_CoAP_Client_linkInfo.xml" --rom_model -o "VS_Gr06_LabProject_CoAP_Client.out" "./fs.obj" "./tm4c129encpdt_startup_ccs.obj" "./webserver_1.obj" "./CFAF128128B0145T/CFAF128128B0145T.obj" "./FreeRTOSSource/croutine.obj" "./FreeRTOSSource/event_groups.obj" "./FreeRTOSSource/heap_4.obj" "./FreeRTOSSource/list.obj" "./FreeRTOSSource/port.obj" "./FreeRTOSSource/portasm.obj" "./FreeRTOSSource/queue.obj" "./FreeRTOSSource/stream_buffer.obj" "./FreeRTOSSource/tasks.obj" "./FreeRTOSSource/timers.obj" "./drivers/pinout.obj" "./third_party/lwip-1.4.1/apps/httpserver_raw/httpd.obj" "./userlib/io.obj" "./userlib/timerIntCtrl.obj" "./utils/lwiplib.obj" "./utils/uartstdio.obj" "./utils/ustdlib.obj" "../tm4c129encpdt.cmd"  -llibc.a -l"C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" 
-<Linking>
-Finished building target: "VS_Gr06_LabProject_CoAP_Client.out"
- 
+gmake[1]: 'VS_Gr06_LabProject_CoAP_Client.out' is up to date.
 
 **** Build Finished ****

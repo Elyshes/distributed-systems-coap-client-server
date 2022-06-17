@@ -99,11 +99,15 @@
 	<variableList>
 		<variable>
 			<name>MG_ROOT</name>
-			<value>$%7BPARENT-4-PROJECT_LOC%7D</value>
+			<value>$%7BPARENT-4-ORIGINAL_PROJECT_ROOT%7D</value>
+		</variable>
+		<variable>
+			<name>ORIGINAL_PROJECT_ROOT</name>
+			<value>file:/C:/Verteilte_Systeme_CoAP_Client_SensorToActuator/VS_Gr06_LabProject_CoAP_Server</value>
 		</variable>
 		<variable>
 			<name>SDK_ROOT</name>
-			<value>file:/C:/Tools/TexasInstruments/TivaWare_C_Series-2.2.0.295</value>
+			<value>$%7BCOM_TI_TIVAWARE_INSTALL_DIR%7D</value>
 		</variable>
 	</variableList>
 </projectDescription>

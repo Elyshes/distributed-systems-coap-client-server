@@ -2,7 +2,7 @@
  * temperature_handler.c
  *
  *  Created on: 15.06.2022
- *      Author: Sebastian
+ *      Author: Sebastian Broede
  *
  */
 #include "temperature_handler.h"
