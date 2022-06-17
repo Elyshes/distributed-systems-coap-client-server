@@ -18,17 +18,14 @@ void coap_handler(struct mg_connection *nc, int ev, void *p) {
     struct mg_coap_message *cm = (struct mg_coap_message *) p;
 
     switch (ev) {
-        // Received CON Message
-        case MG_EV_COAP_CON: {
+        case MG_EV_COAP_CON: { // Received CON Message
             messageHandler(nc, cm);
             break;
         }
-        case MG_EV_COAP_NOC:
-            messageHandler(nc, cm);
-            break;
-        case MG_EV_COAP_ACK: // Not needed for Server
+        case MG_EV_COAP_NOC: // Received NON Message (not implemented yet)
+        case MG_EV_COAP_ACK: // ACK not needed for Server
         case MG_EV_COAP_RST: {
-            UARTprintf("ACK/RST/NOC with msg_id = %d received\n", cm->msg_id);
+            UARTprintf("NON/ACK/RST with msg_id = %d received\n", cm->msg_id);
             break;
         }
     }
@@ -49,6 +46,7 @@ void messageHandler(struct mg_connection *nc, struct mg_coap_message *cm) {
     // 0.00 EMPTY
     if(cm -> code_class == 0 && cm -> code_detail == 0) {
         UARTprintf("Client : Empty Message ->");
+
         // 2.03 VALID
         coap_message.code_class = 2;
         coap_message.code_detail = 3;
@@ -66,14 +64,18 @@ void messageHandler(struct mg_connection *nc, struct mg_coap_message *cm) {
         else if(mg_vcmp(&cm -> options -> value, "light") == 0) {
 
             UARTprintf("Light\n");
+
+            // CON
             if(cm -> msg_type == 0) {
                 coap_message.msg_type = 2;
                 coap_message.msg_id = cm -> msg_id;
             }
+            // NON
             else {
                 coap_message.msg_type = 1;
                 coap_message.msg_id = localMessageID++;
             }
+
             coap_message.token = cm -> token;
 
             // 2.05 CONTENT
@@ -89,9 +91,9 @@ void messageHandler(struct mg_connection *nc, struct mg_coap_message *cm) {
 
         }
         else {
-            // 4.02 BAD OPTION
+            // 4.00 BAD REQUEST
             coap_message.code_class = 4;
-            coap_message.code_detail = 2;
+            coap_message.code_detail = 0;
         }
 
     }
@@ -109,14 +111,15 @@ void messageHandler(struct mg_connection *nc, struct mg_coap_message *cm) {
 
             if (colorBuffer != "0") {
                 color = colorBuffer[0];
-                // 2.04 CHANGE
+
+                // 2.04 CHANGED
                 coap_message.code_class = 2;
                 coap_message.code_detail = 4;
             }
             else {
-                // 4.02 BAD OPTION
+                // 4.00 BAD REQUEST
                 coap_message.code_class = 4;
-                coap_message.code_detail = 2;
+                coap_message.code_detail = 0;
             }
         }
     }
@@ -179,7 +182,7 @@ static void mg_coap_send_by_discover(struct mg_connection *nc, uint16_t msg_id, 
     coap_message.msg_type       = MG_COAP_MSG_ACK;
     coap_message.msg_id         = msg_id;                       // MSG-ID == Request MSG-ID
     coap_message.token          = token;                        // Token == Request Token
-    coap_message.code_class     = 2;  // 2.05
+    coap_message.code_class     = 2;                            // 2.05 CONTENT
     coap_message.code_detail    = 5;
 
     // Content-Formats = application/link-format | 40
