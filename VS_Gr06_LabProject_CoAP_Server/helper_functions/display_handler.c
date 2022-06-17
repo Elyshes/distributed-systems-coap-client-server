@@ -71,7 +71,7 @@ void ioDisplayUpdate(uint32_t localIP)
             break;
 
         case 0:
-            CFAF128128B0145T_text(5, 50, " Waiting for IP", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
+            CFAF128128B0145T_text(5, 50, " Waiting for IP  ", CFAF128128B0145T_color_white, CFAF128128B0145T_color_black, 1, 1);
             break;
 
         default:
