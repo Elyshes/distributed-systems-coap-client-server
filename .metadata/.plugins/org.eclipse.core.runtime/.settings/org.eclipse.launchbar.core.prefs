@@ -2,12 +2,13 @@ LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
 activeLaunchTarget=null\:---
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:Mongoose_TM4C129_BM,org.eclipse.launchbar.core.descriptorType.default\:VS_CoAP_Server_V3,org.eclipse.launchbar.core.descriptorType.default\:VS_Gr03_Project_REST,org.eclipse.launchbar.core.descriptorType.default\:VS_Gr05_Project_CoAP_Server_Actuator,org.eclipse.launchbar.core.descriptorType.default\:VS_Gr06_CoAP_Server,org.eclipse.launchbar.core.descriptorType.default\:VS_Gr5_Project_CoAP_Server_Actuator,org.eclipse.launchbar.core.descriptorType.default\:VS_Gr06_LabProject_CoAP_Client,org.eclipse.launchbar.core.descriptorType.default\:VS_Gr06_LabProject_CoAP_Server
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Mongoose_TM4C129_BM,org.eclipse.launchbar.core.descriptorType.default\:VS_CoAP_Server_V3,org.eclipse.launchbar.core.descriptorType.default\:VS_Gr03_Project_REST,org.eclipse.launchbar.core.descriptorType.default\:VS_Gr05_Project_CoAP_Server_Actuator,org.eclipse.launchbar.core.descriptorType.default\:VS_Gr06_CoAP_Server,org.eclipse.launchbar.core.descriptorType.default\:VS_Gr5_Project_CoAP_Server_Actuator,org.eclipse.launchbar.core.descriptorType.default\:VS_Gr06_LabProject_CoAP_Server,org.eclipse.launchbar.core.descriptorType.default\:VS_Gr06_LabProject_CoAP_Client
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:Mongoose_TM4C129_BM/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Mongoose_TM4C129_BM/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:VS_Gr06_LabProject_CoAP_Client/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:VS_Gr06_LabProject_CoAP_Client/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:VS_Gr06_LabProject_CoAP_Server/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:VS_Gr07_Project_MQTT_pubClient/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:webserver_1/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:webserver_1/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

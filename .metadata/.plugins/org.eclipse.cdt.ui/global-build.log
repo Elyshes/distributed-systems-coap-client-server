@@ -1171,3 +1171,19 @@ Finished building target: "VS_Gr06_LabProject_CoAP_Server.out"
  
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project VS_Gr06_LabProject_CoAP_Server ****
+
+"C:\\Tools\\TexasInstruments\\ccs1120\\ccs\\utils\\bin\\gmake" -k all 
+ 
+gmake: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project VS_Gr06_LabProject_CoAP_Client ****
+
+"C:\\Tools\\TexasInstruments\\ccs1120\\ccs\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'VS_Gr06_LabProject_CoAP_Client.out' is up to date.
+
+**** Build Finished ****
