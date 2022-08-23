@@ -1,5 +1,5 @@
-# Verteilte_Systeme_CoAP_Client_SensorToActuator
- Verteilte Systeme Projektarbeit CoAP Client: sensor to actuator
+# Distributed Systems CoAP Client Server:  sensor to actuatorVerteilte_Systeme_CoAP_Client_SensorToActuator
+Verteilte Systeme Projektarbeit CoAP Client: sensor to actuator
 
 
 ## Ablauf
