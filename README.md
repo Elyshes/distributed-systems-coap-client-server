@@ -1,6 +1,4 @@
-# Distributed Systems CoAP Client Server:  sensor to actuatorVerteilte_Systeme_CoAP_Client_SensorToActuator
-Verteilte Systeme Projektarbeit CoAP Client: sensor to actuator
-
+# Distributed Systems team project CoAP Client & Server:  sensor to actuator
 
 ## Ablauf
 Modell besteht aus zwei Mikrocontrollern, auf denen ein Server und ein Client befinden.
