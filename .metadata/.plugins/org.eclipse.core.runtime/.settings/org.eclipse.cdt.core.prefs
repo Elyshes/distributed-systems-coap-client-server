@@ -1,4 +1,12 @@
 eclipse.preferences.version=1
+environment/workspace/SW_FREERTOS/delimiter=;
+environment/workspace/SW_FREERTOS/operation=append
+environment/workspace/SW_FREERTOS/value=C\:\\Tools\\Thirdparty\\FreeRTOSv202112.00
+environment/workspace/SW_ROOT/delimiter=;
+environment/workspace/SW_ROOT/operation=append
+environment/workspace/SW_ROOT/value=C\:\\Tools\\TexasInstruments\\TivaWare_C_Series-2.2.0.295
+environment/workspace/append=true
+environment/workspace/appendContributed=true
 macros/workspace=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<macros>\r\n    <stringMacro name\="SW_ROOT" type\="VALUE_PATH_DIR" value\="C\:\\Tools\\TexasInstruments\\TivaWare_C_Series-2.2.0.295"/>\r\n    <stringMacro name\="SW_FREERTOS" type\="VALUE_PATH_DIR" value\="C\:\\Tools\\ThirdParty\\FreeRTOSv202112.00"/>\r\n</macros>\r\n
 org.eclipse.cdt.core.formatter.alignment_for_arguments_in_method_invocation=18
 org.eclipse.cdt.core.formatter.alignment_for_assignment=16

@@ -5,7 +5,7 @@
    <string>defaultSolution</string>
    <void method="set">
     <object idref="SolutionManager$PersistState0"/>
-    <string>C:\Tools\TexasInstruments\ccs1120\ccs\ccs_base\dvt_4.1.0.202106281057\CodeGen\solutions\CodeGenCoverage</string>
+    <string>C:\Verteilte_Systeme_CoAP_Client_SensorToActuator\dvt\AnalysisSolutionsTemp\AnalysisSolution1655790960441\null</string>
    </void>
   </void>
  </object>
@@ -14,10 +14,10 @@
  <void id="ArrayList0" method="get">
   <object idref="SolutionManager$PersistState0"/>
   <void method="add">
-   <string>C:\Verteilte_Systeme_CoAP_Client_SensorToActuator\dvt\AnalysisSolutionsTemp\AnalysisSolution1655461708028\null</string>
+   <string>C:\Tools\TexasInstruments\ccs1120\ccs\ccs_base\dvt_4.1.0.202106281057\CodeGen\solutions\CodeGenCoverage</string>
   </void>
   <void method="add">
-   <string>C:\Tools\TexasInstruments\ccs1120\ccs\ccs_base\dvt_4.1.0.202106281057\CodeGen\solutions\CodeGenCoverage</string>
+   <string>C:\Verteilte_Systeme_CoAP_Client_SensorToActuator\dvt\AnalysisSolutionsTemp\AnalysisSolution1655790960441\null</string>
   </void>
  </void>
 </void>

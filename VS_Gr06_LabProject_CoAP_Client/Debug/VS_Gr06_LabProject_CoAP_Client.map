@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker PC v20.2.5                     
 ******************************************************************************
->> Linked Fri Jun 17 12:20:16 2022
+>> Linked Fri Jun 17 12:49:17 2022
 
 OUTPUT FILE NAME:   <VS_Gr06_LabProject_CoAP_Client.out>
 ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00022a59
